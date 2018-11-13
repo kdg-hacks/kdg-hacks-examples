@@ -12,7 +12,7 @@ void setup() {
   SerialUSB.println("");
   SerialUSB.println("--- START ---");
 
-  // Wi LTEoの初期化
+  // Wio LTEの初期化
   Wio.Init();
 
   // LTEモデムへ電源ON
