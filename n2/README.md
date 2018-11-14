@@ -17,9 +17,10 @@ MQTTプロトコルを利用し、受信したテキストを音声合成を行�
 Wio LTE M1/NB1のセットアップや環境構築にあたっては、[こちら](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/home-ja.md)をご覧ください。
 
 
-##実物イメージ
+## 実物イメージ
+
 |日本語音声合成スピーカー付き小型Box|n2-BoxとWio LTE M1/NB1の接続|
-|---|---|
-|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box.jpg)|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box.jpg)|
+|:---:|:---:|
+|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box.jpg)|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/wio_n2tts_box.jpg.jpg)|
 
 
