@@ -4,10 +4,12 @@ KDDI総合研究所で開発・販売している[音声合成ソフトウェア
 今回、マイコン版を利用したスピーカー付き小型音声合成Boxを開発し、I2C経由で制御できるガジェットを用意いたしました。
 Wio LTE M1/NB1と接続した場合のArduinoソースコードサンプルを公開いたします。
 
-# n2tts-simple
+# N2 I2C TTS コマンド仕様(./n2_i2c_20181106.md)
+
+# [n2tts-simple](./tts-simple-sample)
 起動時に起動状況を音声で伝えるだけのサンプル、パラメータの取得・設定方法や合成方法のサンプルコード
 
-# n2tts-mqtt
+# [n2tts-mqtt](./tts-mqtt-sample)
 MQTTプロトコルを利用し、受信したテキストを音声合成を行う場合のサンプルコード
 
 # その他
@@ -16,9 +18,9 @@ Wio LTE M1/NB1のセットアップや環境構築にあたっては、[こち�
 
 
 ## 日本語音声合成スピーカー付き小型Box
-![日本語音声合成スピーカー付き小型Boxイメージ](kdg-hacks-examples/n2/images/n2tts_box.jpg)
+![日本語音声合成スピーカー付き小型Boxイメージ](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box.jpg =300x)
 
 ## 日本語音声合成スピーカー付き小型BoxとWio LTE M1/NB1を接続
-![接続イメージ](kdg-hacks-examples/n2/images/wio_n2tts_box.jpg)
+![接続イメージ](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/wio_n2tts_box.jpg =300x)
 
 
