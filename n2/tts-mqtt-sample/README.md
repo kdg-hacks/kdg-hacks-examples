@@ -75,7 +75,8 @@ Chrome ExtensionやiOSアプリなど
 いくつか試したところ、想定通りの動作にならないクライアントが結構ありましたので、
 念のため、こちらで確認したアプリをご紹介いたします。
 [Mpttt by Chenhsin Wong](https://appadvice.com/app/mqttt/1217080708)で、動作画面イメージは以下の通りです。
+
 |起動画面|メッセージ送信画面|
 |:---:|:---:|
-|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/Screen Shot 2018-11-13 at 18.49.46.png)|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/Screen Shot 2018-11-13 at 19.14.35.png)|
+|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/Screen%20Shot%202018-11-13%20at%2018.49.46.png)|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/Screen%20Shot%202018-11-13%20at%2019.14.35.png)|
 
