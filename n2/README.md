@@ -1,7 +1,7 @@
 音声合成ソフトウェア「N2」
 =========================
 KDDI総合研究所で開発・販売している[音声合成ソフトウェアN2](https://www.kddi-research.jp/products/n2.html)は、省メモリで軽量な日本語音声読み上げソフトウェアです。
-今回、マイコン版を利用したスピーカー付き小型音声合成Boxを開発し、I2C経由で制御できるガジェットを用意いたしました。
+今回、スピーカー付き小型音声合成Boxを開発しました。本Boxは、I2C経由で制御可能で、
 Wio LTE M1/NB1と接続した場合のArduinoソースコードサンプルを公開いたします。
 
 # [N2 I2C TTS コマンド仕様](./n2_i2c_20181106.md)
@@ -20,7 +20,7 @@ Wio LTE M1/NB1のセットアップや環境構築にあたっては、[こち�
 
 ## 実物イメージ
 
-|日本語音声合成スピーカー付き小型Box|n2-BoxとWio LTE M1/NB1の接続|
+|スピーカー付き小型音声合成Box|n2-BoxとWio LTE M1/NB1の接続|
 |:---:|:---:|
 |![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box.jpg)|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/wio_n2tts_box.jpg)|
 
