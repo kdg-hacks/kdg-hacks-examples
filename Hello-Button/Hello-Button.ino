@@ -1,6 +1,10 @@
-// Wio LTE/M1 D38端子にGROVE BUTTON(P)を繋いだ場合のサンプルプログラム
+// Wio LTE/M1 D38 or D20端子にGROVE BUTTON(P)を繋いだ場合のサンプルプログラム
 
 #include <WioCellLibforArduino.h>
+
+// 接続したボタンの位置に合わせて、下記のコメントを付けたり、外したりしてください。
+// #define BTN WIO_D38
+// #define BTN WIO_D20
 
 WioCellular Wio;
 
@@ -13,13 +17,16 @@ void setup() {
   // Wi LTEoの初期化
   Wio.Init();
 
-  // D38のポートをDIGITAL INPUTモードにする
-  pinMode(WIO_D38, INPUT);
+  // GROVE端子へ電源供給を行う(D38以外向け）
+  Wio.PowerSupplyGrove(true);
+
+  // ポートをDIGITAL INPUTモードにする
+  pinMode(BTN, INPUT);
 }
 
 void loop() {
   // ボタンの状態を読み取る
-  int btn = digitalRead(WIO_D38);
+  int btn = digitalRead(BTN);
   
   // 読み取った値を表示する
   SerialUSB.println(btn);
