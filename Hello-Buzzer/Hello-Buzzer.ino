@@ -20,7 +20,7 @@ void setup() {
   // GROVE端子へ電源供給を行う(D38以外向け）
   Wio.PowerSupplyGrove(true);
   
-  // D38のポートをDIGITAL OUTPUTモードにする
+  // ポートをDIGITAL OUTPUTモードにする
   pinMode(BUZZER, OUTPUT);
 }
 
