@@ -6,7 +6,10 @@
 #define USERNAME          "sora"
 #define PASSWORD          "sora"
 
-#define WEBURL       "http://httpbin.org/ip"
+#define WEBURL       "http://httpbin.org/ip"  // JSONでアクセス元IPアドレスを返すHP
+
+// HTTPSだと失敗するので、SORACOMサービス使わないとダメだね。
+// #define WEBURL       "https://httpbin.org/ip"
 // #define WEBURL       "http://beam.soracom.io:8888/"
 
 #define INTERVAL          (60000)
@@ -39,6 +42,11 @@ void setup() {
     Wio.SetSelectNetwork(WioCellular::SELECT_NETWORK_MODE_MANUAL_IMSI);
   #endif
 
+  #ifdef ARDUINO_WIO_3G
+    SerialUSB.println("### SetSelectNetwork ###");
+    Wio.SetSelectNetwork(WioCellular::SELECT_NETWORK_MODE_AUTOMATIC);
+  #endif
+
   SerialUSB.println("### Connecting to \"" APN "\".");
   
   if (!Wio.Activate(APN, USERNAME, PASSWORD)) {
@@ -53,7 +61,7 @@ void loop() {
   if(setup_flag == false)
   {
     delay(5000);
-    setup();
+    // setup();
     return;
   }
   
