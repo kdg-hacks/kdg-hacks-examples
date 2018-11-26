@@ -23,8 +23,8 @@ KDG HACKS 2018向けのサンプルコード集
 | GROVE-発話認識| <details><summary>特定の音声をコマンドとして認識</summary><sub>「Start」「Stop」「Play music」など特定の音声コマンドを認識できます（全22種。[詳しくはwikiをご覧ください](http://wiki.seeed.cc/Grove-Speech_Recognizer/)）。<br>コマンドを認識すると、接続されたスピーカーから該当コマンドをリピートし、規定の値を返します。この値を通して、モーターや音楽プレーヤーなど他のデバイスを制御することが可能です。<br>ボードには、Nuvoton ISD9160（SoC）、マイク、SPIフラッシュ、1 x GROVEコネクタ、1 x スピーカコネクタを搭載。ARM Cortex-M0ベースのNuvoton ISD9160は、費用対効果の高い、強力な音声制御アプリケーション用ソリューションを提供します。内蔵マイクは無指向性なので、発話者の話している方向にかかわらず、安定した信号を記録できます。<br>高精度の認識率と非常に低い誤トリガー率を持ち、音声を使用したインタラクティブなデバイスなど、IoTアプリケーションの中でも最も興味深いものづくりの一つに貢献します。</sub></details>| TODO | TODO| [公式Wiki](http://wiki.seeed.cc/Grove-Speech_Recognizer/)|
 | GROVE-テープLEDドライバー| <details><summary>テープLEDドライバ</summary><sub>・カスケード接続可能<br>・テープLEDは5m以下を推奨<br>・PWM出力<br>・256段階の輝度レベル</sub></details>| TODO | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-LED_Strip_Driver/)|
 | SORACOM metadata| | [Hello-SORACOM-metadata](Hello-SORACOM-metadata) |SORACOM メタサービスデータの取得の仕方|[公式サイト](https://dev.soracom.io/jp/start/metadata/)|
-| SORACOM Beam(IFTTT)| | [Hello-SORACOM-beam](Hello-SORACOM-beam) |SORACOM Beamを使って、HTTP PostでIFTTTに繋ぐ|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
-| SORACOM Beam(AWS IoT Core| | [Hello-Mqtt](Hello-Mqtt) |SORACOM Beamを使って、AWS IoT CoreにMQTTで繋ぐ|[公式サイト](https://dev.soracom.io/jp/docs/aws_iot_guide_console/)|
+| SORACOM Beam(IFTTT)| | [Hello-SORACOM-beam](Hello-SORACOM-beam) |SORACOM Beamを使って、HTTP PostでIFTTTに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
+| SORACOM Beam(AWS IoT Core)| | [Hello-Mqtt](Hello-Mqtt) |SORACOM Beamを使って、AWS IoT CoreにMQTTで接続する（双方向）|[公式サイト](https://dev.soracom.io/jp/docs/aws_iot_guide_console/)|
+| SORACOM Funnel(AWS IoT Core)| | [Hello-SORACOM-funnel](Hello-SORACOM-funnel) |SORACOM Funnelを使って、AWS IoT Coreに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/funnel_aws_iot/)|
 | xxxリモコン| | [Hello-xxxxx](xxxx) |xxxを操作するリモコン|[公式サイト](site)|
-| xxxリモコン| | [Hello-xxxxx](xxxx) |xxxを操作するリモコン|[公式サイト](site)|
-| xxxリモコン| | [Hello-xxxxx](xxxx) |xxxを操作するリモコン|[公式サイト](site)|
+
