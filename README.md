@@ -22,5 +22,4 @@ KDG HACKS 2018向けのサンプルコード集
 | GROVE-超音波距離| 非接触距離センサ | [Hello-Ultrasonic](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Ultrasonic) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/)|
 | GROVE-発話認識| <details><summary>特定の音声をコマンドとして認識</summary><sub>「Start」「Stop」「Play music」など特定の音声コマンドを認識できます（全22種。[詳しくはwikiをご覧ください](http://wiki.seeed.cc/Grove-Speech_Recognizer/)）。<br>コマンドを認識すると、接続されたスピーカーから該当コマンドをリピートし、規定の値を返します。この値を通して、モーターや音楽プレーヤーなど他のデバイスを制御することが可能です。<br>ボードには、Nuvoton ISD9160（SoC）、マイク、SPIフラッシュ、1 x GROVEコネクタ、1 x スピーカコネクタを搭載。ARM Cortex-M0ベースのNuvoton ISD9160は、費用対効果の高い、強力な音声制御アプリケーション用ソリューションを提供します。内蔵マイクは無指向性なので、発話者の話している方向にかかわらず、安定した信号を記録できます。<br>高精度の認識率と非常に低い誤トリガー率を持ち、音声を使用したインタラクティブなデバイスなど、IoTアプリケーションの中でも最も興味深いものづくりの一つに貢献します。</sub></details>| TODO | TODO| [公式Wiki](http://wiki.seeed.cc/Grove-Speech_Recognizer/)|
 | GROVE-テープLEDドライバー| <details><summary>テープLEDドライバ</summary><sub>・カスケード接続可能<br>・テープLEDは5m以下を推奨<br>・PWM出力<br>・256段階の輝度レベル</sub></details>| TODO | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-LED_Strip_Driver/)|
-
 | xxxリモコン| | [Hello-xxxxx](xxxx) |xxxを操作するリモコン|[公式サイト](site)|
