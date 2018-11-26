@@ -7,8 +7,7 @@
 #define USERNAME          "sora"
 #define PASSWORD          "sora"
 
-#define WEBURL            "http://beam.soracom.io:8888/"  // SORACOM メタデータサービスのURL
-
+#define WEBURL            "http://beam.soracom.io:8888/"
 #define INTERVAL          (120000)
 
 boolean setup_flag = false;
