@@ -74,6 +74,6 @@ KDG HACKS 2018向けのサンプルコード集
 | SORACOM Funnel(AWS IoT Core)| | [Hello-SORACOM-funnel](Hello-SORACOM-funnel) |SORACOM Funnelを使って、AWS IoT Coreに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/funnel_aws_iot/)|
 | 赤外線リモコン(TV操作)| <details><summary>赤外線信号でテレビを操作</summary><sub>赤外線信号を送信して、テレビの電源ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-tv](Hello-IrRemocon-tv) | テレビの電源ON/OFFを操作する赤外線信号を送信 |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
 | 赤外線リモコン(エアコン操作)| <details><summary>赤外線信号でエアコンを操作</summary><sub>赤外線信号を送信して、エアコンの冷房ON/暖房ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-aircon](Hello-IrRemocon-aircon) | エアコンの暖房ON->冷房ON->電源OFFを操作する赤外線信号を送信 |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
-| 赤外線リモコン(照明操作)| <details><summary>赤外線信号で照明を操作</summary><sub>赤外線信号を送信して、照明の電源ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-light](Hello-IrRemocon-light) | 照明を操作する赤外線信号を送信(TODO:和久津) |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
+| 赤外線リモコン(照明操作)| <details><summary>赤外線信号で照明を操作</summary><sub>赤外線信号を送信して、照明の電源ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-light](Hello-IrRemocon-light) | 照明の電源ON->電源OFF操作する赤外線信号を送信 |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
 | SORACOM LTE-M Button | <details><summary>AWS IoT 1-Clickのサポート対象デバイス</summary><sub>AWS IoT 1-Click のマネジメントコンソール上で設定することにより Eメールや SMSの送信などの簡単なアクションを実行できるほか、AWS Lambda と連携することでクリック時に JavaScript、Java、Python、C# などの言語で記述した独自のビジネスロジックの実行が可能です。</sub></details> | [Hello-SORACOM-lte-m-button](Hello-SORACOM-lte-m-button) | (TODO:和久津) |[公式サイト](https://soracom.jp/products/gadgets/aws_button/)|
 
