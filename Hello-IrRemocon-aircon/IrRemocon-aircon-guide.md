@@ -1,4 +1,4 @@
-# IrRemocon-tv-guide
+# IrRemocon-aircon-guide
 赤外線信号でエアコンを操作するサンプルコードのガイド
 
 ## 事前準備
