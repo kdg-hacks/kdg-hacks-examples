@@ -1,5 +1,5 @@
-
 // Wio LTE/M1 D38 or D20端子にGROVE Dust Sensorを繋いだ場合のサンプルプログラム
+// このセンサーは、本来5Vで動作するセンサーなので、3.3VのWio LTE/M1では、不安定な動作の可能性が！
 
 #include <WioCellLibforArduino.h>
 #include <math.h>
@@ -12,7 +12,7 @@ WioCellular Wio;
 
 unsigned long duration;
 unsigned long starttime;
-unsigned long sampletime_ms = 30000;//sampe 30s ;
+unsigned long sampletime_ms = 30000;
 unsigned long lowpulseoccupancy = 0;
 float ratio = 0;
 float concentration = 0;
