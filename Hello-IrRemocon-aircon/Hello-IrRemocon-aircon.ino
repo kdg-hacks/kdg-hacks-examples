@@ -72,7 +72,7 @@ void loop() {
   char data[100];
   int status;
   
-  SerialUSB.println("### IR Remocn TV-Power-Signal Post.");
+  SerialUSB.println("### IR Remocn Aircon-Power-Signal Post.");
 
   // エアコンの暖房ON -> 冷房ON -> OFF操作リクエスト
   sprintf(data, "[\"heat_on\", \"cool_on\", \"aircon_off\"]");
