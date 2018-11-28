@@ -51,7 +51,7 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| GROVE-I2Cカラー| <details><summary>環境光の色度や、物体の色を検出</summary><sub>TCS34725FNを搭載。<br>2行8列のフィルターされたフォトダイオードと16 bitのADコンバータを内蔵しています。<br>16個のフォトダイオードのうち4個は赤色フィルタ、4個は緑色フィルタ、4個は青色フィルタ、4個はフィルタなし（クリア）</sub></details>| TODO: 徳丸さん | TODO|[公式Wiki](http://wiki.seeed.cc/Grove-I2C_Color_Sensor/)|
+| GROVE-I2Cカラー| <details><summary>環境光の色度や、物体の色を検出</summary><sub>TCS34725FNを搭載。<br>2行8列のフィルターされたフォトダイオードと16 bitのADコンバータを内蔵しています。<br>16個のフォトダイオードのうち4個は赤色フィルタ、4個は緑色フィルタ、4個は青色フィルタ、4個はフィルタなし（クリア）</sub></details>| [Hello-Color](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Color) | TODO|[公式Wiki](http://wiki.seeed.cc/Grove-I2C_Color_Sensor/)|
 | GROVE-I2Cタッチ|<details><summary> 静電容量タッチセンサ</summary> | | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-I2C_Touch_Sensor/)|
 | GROVE-I2C三軸加速度| | [Hello-3Axis](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-3Axis) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/)|
 | GROVE-温湿度| <details><summary>高精度で使いやすい温度湿度センサ</summary><sub>SHT31センサは、相対湿度の誤差±2%以内の最高精度の湿度センサです。<br>温度計としても-40度や125度といった極端な状況でも使用可能で、±0.3度の高精度を保持します。</sub></details>| [Grove_SHT31_Temp_Humi_Sensor](https://github.com/kdg-hacks/Grove_SHT31_Temp_Humi_Sensor) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|
