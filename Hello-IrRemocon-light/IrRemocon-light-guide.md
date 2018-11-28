@@ -12,7 +12,7 @@ SORACOM Beamについては、以下の設定を実施してください。
 | エントリポイント-プロトコル | HTTP(SORACOM BeamのHTTPエントリポイントを選択) |
 | エントリポイント-パス | /smarthome/execute/commands |
 | 転送先-プロトコル | HTTPS |
-| 転送先-ホスト名 | api.gh.dev-auhome.au.com |
+| 転送先-ホスト名 | api-google.gh.auhome.au.com |
 | 転送先-ポート番号 | 443 |
 | 転送先-パス | /smarthome/execute/commands |
 | カスタムヘッダ(1)-アクション | 置換 |
@@ -32,3 +32,11 @@ SORACOM Beamについては、以下の設定を実施してください。
 |---|------------|---|
 | 照明電源ON | on | 照明電源をONにする |
 | 照明電源ON | light_off | 照明電源をOFFにする |
+
+
+### 操作リクエストの指定について
+操作リクエストについては、配列で複数指定することが可能です。赤外線信号については指定した順に送信されます。
+
+```
+["on", "light_off"]
+```
