@@ -55,6 +55,7 @@ KDG HACKS 2018向けのサンプルコード集
 | GROVE-I2Cタッチ| | TODO | (TODO:きしだ)| [公式Wiki](http://wiki.seeedstudio.com/Grove-I2C_Touch_Sensor/)|
 | GROVE-I2C三軸加速度| | [Hello-3Axis](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-3Axis) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/)|
 | GROVE-温湿度| <details><summary>高精度で使いやすい温度湿度センサ</summary><sub>SHT31センサは、相対湿度の誤差±2%以内の最高精度の湿度センサです。<br>温度計としても-40度や125度といった極端な状況でも使用可能で、±0.3度の高精度を保持します。</sub></details>| [Grove_SHT31_Temp_Humi_Sensor](https://github.com/kdg-hacks/Grove_SHT31_Temp_Humi_Sensor) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|
+| 音声合成Box| <details><summary>高品質な音声合成デバイス</summary><sub>KDDI総合研究所製音声合成ソフトN2を搭載したBox型音声合成デバイス<br />今回は2種類のBoxを用意、それぞれ別の声質を出すようにしました。</sub></details>| [n2](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/n2) |2種サンプル：(1)テキストを設定して喋らせる、(2)MQTTプロトコルを利用し、受信したテキストを喋らせる| [KDDI総合研究所/N2](https://www.kddi-research.jp/products/n2.html)|
 
 #### UART
 
