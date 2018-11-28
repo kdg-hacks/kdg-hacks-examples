@@ -20,8 +20,8 @@ Wio LTE M1/NB1のセットアップや環境構築にあたっては、[こち�
 
 ## 実物イメージ
 
-|スピーカー付き小型音声合成Box|n2-BoxとWio LTE M1/NB1の接続|
-|:---:|:---:|
-|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box.jpg)|![](https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/wio_n2tts_box.jpg)|
+|2種類のスピーカー付き小型音声合成Box|n2-BoxとWio LTE M1/NB1の接続|
+|---|---|
+|<img src="https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/n2tts_box2.jpg" width=320><br />左（黒）:ビジネスウーマン, address=0x4E<br />右（灰）:アニメ声, address: 0x4F|<img src="https://github.com/kdg-hacks/kdg-hacks-examples/blob/images/n2/images/wio_n2tts_box.jpg" width=320>|
 
 
