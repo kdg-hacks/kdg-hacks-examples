@@ -22,7 +22,7 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| 内蔵フルカラーLED | <details><summary>`Wio LTE M1/NB1(BG96)`上のフルカラーLED </summary><sub>RGB各256段階の組合せで最大1677万色の表示が可能です。</sub></details> | [Hello-LED](Hello-LED) |内蔵フルカラーLEDをLチカする|[公式リファレンス](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/reference-ja.md#ledsetrgb)|
+| 内蔵フルカラーLED | <details><summary>`Wio LTE M1/NB1(BG96)`上のフルカラーLED </summary><sub>RGB各256段階の組合せで最大1677万色の表示が可能です。</sub></details> | [Hello-LED](Hello-LED) |１秒毎に、内蔵LEDを赤色にON/OFFにする|[公式リファレンス](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/reference-ja.md#ledsetrgb)|
 
 ### 各種センサー
 
@@ -70,6 +70,7 @@ KDG HACKS 2018向けのサンプルコード集
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
 | HTTP GETリクエスト| <details><summary> HTTP GETプロトコルで、Webサーバからデータを取得する </summary><sub>SSL通信は出来ない場合があるので、http通信のみが望ましい</sub></details> | [Hello-HttpGet](Hello-HttpGet) |１分毎に、IPアドレスを取得することができるWebサービスにアクセスして、IPアドレスをJSON形式で取得する|[公式サイト](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/reference-ja.md#httpget)|
+| SORACOM Harvest| <details><summary>  SORACOM Harvest(以下、Harvest) は、IoTデバイスからのデータを収集、蓄積するサービスです。 </summary><sub> 保存されたデータには受信時刻や SIM の ID が自動的に付与され、「SORACOM」のユーザーコンソール内で、グラフ化して閲覧したり、API を通じて取得することができます。</sub></details> | [Hello-SoracomHarvest](Hello-SoracomHarvest) |１秒ごとに、カウントアップした数値をHarvestに送る|[公式サイト](https://dev.soracom.io/jp/start/harvest/)|
 | SORACOM metadata| <details><summary> SORACOM Air のメタデータ情報の取得および更新 </summary><sub> SORACOM Airのデバイスが利用しているSIM等の情報を取得および更新できます。 </sub></details> | [Hello-SORACOM-metadata](Hello-SORACOM-metadata) |SORACOM メタサービスデータの取得の仕方|[公式サイト](https://dev.soracom.io/jp/start/metadata/)|
 | SORACOM Beam(IFTTT)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-SORACOM-beam](Hello-SORACOM-beam) |SORACOM Beamを使って、HTTP PostでIFTTTに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
 | SORACOM Beam(AWS IoT Core)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-Mqtt](Hello-Mqtt) |SORACOM Beamを使って、AWS IoT CoreにMQTTで接続する（双方向）|[公式サイト](https://dev.soracom.io/jp/docs/aws_iot_guide_console/)|
