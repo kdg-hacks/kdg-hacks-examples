@@ -14,6 +14,8 @@ Grove I2C Color Sensor V2.0 は公式に、Wio LTE M1/NB1をサポートして�
 # 実行
 Hello-Color.inoを開き、Arduino IDEより、マイコンボードに書き込むことで実行されます。
 
+# 動作確認
+[Hello-Color/color_tester.html](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Color/color_tester.html)に、指定した色を画面全体に表示するHTMLを付属してます。
 
 # その他ライセンスなど
 
