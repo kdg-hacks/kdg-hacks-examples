@@ -69,6 +69,7 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
+| HTTP GETリクエスト| <details><summary> HTTP GETプロトコルで、Webサーバからデータを取得する </summary><sub>SSL通信は出来ない場合があるので、http通信のみが望ましい</sub></details> | [Hello-HttpGet](Hello-HttpGet) |１分毎に、IPアドレスを取得することができるWebサービスにアクセスして、IPアドレスをJSON形式で取得する|[公式サイト](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/reference-ja.md#httpget)|
 | SORACOM metadata| <details><summary> SORACOM Air のメタデータ情報の取得および更新 </summary><sub> SORACOM Airのデバイスが利用しているSIM等の情報を取得および更新できます。 </sub></details> | [Hello-SORACOM-metadata](Hello-SORACOM-metadata) |SORACOM メタサービスデータの取得の仕方|[公式サイト](https://dev.soracom.io/jp/start/metadata/)|
 | SORACOM Beam(IFTTT)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-SORACOM-beam](Hello-SORACOM-beam) |SORACOM Beamを使って、HTTP PostでIFTTTに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
 | SORACOM Beam(AWS IoT Core)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-Mqtt](Hello-Mqtt) |SORACOM Beamを使って、AWS IoT CoreにMQTTで接続する（双方向）|[公式サイト](https://dev.soracom.io/jp/docs/aws_iot_guide_console/)|
