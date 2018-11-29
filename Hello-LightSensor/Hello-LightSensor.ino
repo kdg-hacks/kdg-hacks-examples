@@ -11,7 +11,8 @@ WioCellular Wio;
 void setup() {
   delay(200);
 
-  SerialUSB.begin(9600);
+  // デバッグ用シリアル初期化
+  SerialUSB.begin(115200);
   SerialUSB.println("");
   SerialUSB.println("--- START ---------------------------------------------------");
 
