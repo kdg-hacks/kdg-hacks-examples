@@ -1,4 +1,7 @@
 /**
+ * GroveColorV2 is modified from Grove_I2C_Color_Sensor_TCS3472
+ * https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472
+ * 
  * GroveColorV2.h is modified from Adafruit_TCS34725.h
  * Adafruit_TCS34725.h is protected by following license.
  */
@@ -38,6 +41,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 /**************************************************************************/
+
 #include <WioCellLibforArduino.h>
 #ifndef _TCS34725_H_
 #define _TCS34725_H_
@@ -128,7 +132,7 @@ class GroveColorV2 {
   uint16_t read16 (uint8_t reg);
   void setInterrupt(boolean flag);
   void clearInterrupt(void);
-  void setIntLimits(uint16_t l, uint16_t h);
+  void setInterruptLimits(uint16_t l, uint16_t h);
   void     enable(void);
 
  private:

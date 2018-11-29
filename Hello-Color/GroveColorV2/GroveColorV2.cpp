@@ -1,7 +1,11 @@
 /**
+ * GroveColorV2 is modified from Grove_I2C_Color_Sensor_TCS3472
+ * https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472
+ * 
  * GroveColorV2.cpp is modified from Adafruit_TCS34725.cpp
  * Adafruit_TCS34725.h is protected by following license.
  */
+
 /**************************************************************************/
 /*!
     @file     Adafruit_TCS34725.cpp
@@ -301,7 +305,7 @@ void GroveColorV2::clearInterrupt(void) {
 }
 
 
-void GroveColorV2::setIntLimits(uint16_t low, uint16_t high) {
+void GroveColorV2::setInterruptLimits(uint16_t low, uint16_t high) {
    write8(0x04, low & 0xFF);
    write8(0x05, low >> 8);
    write8(0x06, high & 0xFF);

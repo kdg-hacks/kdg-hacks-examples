@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        ".eslintrc": "javascript",
+        "initializer_list": "cpp",
+        "iterator": "cpp",
+        "string": "cpp"
+    }
+}
