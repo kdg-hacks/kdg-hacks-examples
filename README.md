@@ -37,7 +37,7 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| GROVE-Button| | [Hello-Button](Hello-Button) |ボタンの状態を取得する|[公式Wiki](http://wiki.seeedstudio.com/Grove-Button/)|
+| GROVE-Button| <details><summary> ボタンスイッチ </summary><sub>ボタン押下(ON)、非押下(OFF)の2種類の状態取得が可能です。ボタンを起因にサービスやセンサーを動作させる等に活用できます。</sub></details> | [Hello-Button](Hello-Button) |ボタンの状態を取得する|[公式Wiki](http://wiki.seeedstudio.com/Grove-Button/)|
 | GROVE-Buzzer| | [Hello-Buzzer](Hello-Buzzer) |ブザーをON/OFFする|[公式Wiki](http://wiki.seeedstudio.com/Grove-Buzzer/)|
 | GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | 大気中の粒子状物質の濃度を測る | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
 | GROVE-磁気スイッチ| | [Hello-MagSW](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-MagSW) | TODO| [公式Wiki](http://wiki.seeed.cc/Grove-Magnetic_Switch/)|
