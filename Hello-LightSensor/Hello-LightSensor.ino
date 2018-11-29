@@ -7,8 +7,6 @@
 #define GSR (WIO_A4)
 
 WioCellular Wio;
-int sensorValue = 0;
-int gsr_average = 0;
 
 void setup() {
   delay(200);
