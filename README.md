@@ -30,7 +30,7 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| GROVE-GSR| <details><summary>皮膚の電気伝導度を検出</summary><sub>睡眠の質のモニタリングなど、感情関連のプロジェクトを実現するのに最適です。<br>GSRは、Galvanic Skin Responseの略で、皮膚の電気伝導度を測定する方法です。<br>汗腺によって分泌される汗の量の変化などを測定すれば、うそ発見器も作成できるかもしれません。</sub></details> | [GSR-Monitor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/GSR-Monitor) | TODO |[公式Wiki](http://wiki.seeed.cc/Grove-GSR_Sensor/)|
+| GROVE-GSR| <details><summary>皮膚の電気伝導度を検出</summary><sub>睡眠の質のモニタリングなど、感情関連のプロジェクトを実現するのに最適です。<br>GSRは、Galvanic Skin Responseの略で、皮膚の電気伝導度を測定する方法です。<br>汗腺によって分泌される汗の量の変化などを測定すれば、うそ発見器も作成できるかもしれません。</sub></details> | [GSR-Monitor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/GSR-Monitor) | 5ミリ秒毎に10回取得した値の平均値を取得し、シリアルに出力します。機器に付属している可変抵抗をプラスドライバーで回すことで出力される値が大きく変更します。 |[公式Wiki](http://wiki.seeed.cc/Grove-GSR_Sensor/)|
 | GROVE-光| <details><summary>光量を計測</summary><sub>広範囲の光を感知し、電気信号を出力するアナログセンサモジュールです。<br>出力レンジは制御するボードのADコンバータに依存します（例えば、8 bit ADCなら0〜255を出力します）。</sub></details>| [Hello-LightSensor](Hello-LightSensor) | 1秒毎に光量を取得し、シリアルに出力します。光量は0(暗い)〜4096(明るい)までの値で取得できます。 |[公式Wiki](http://wiki.seeed.cc/Grove-Light_Sensor/)|
 
 #### Digital
