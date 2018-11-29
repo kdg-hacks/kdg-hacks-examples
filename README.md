@@ -62,17 +62,17 @@ KDG HACKS 2018向けのサンプルコード集
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
 | GROVE-シリアルカメラ| <details><summary>カメラ</summary><sub>ワイドアングルレンズが付属します。<br>ワイドアングルレンズは何かをモニタリングする時などに便利。</sub></details>| TODO | (TODO:きしだ)| [公式Wiki](http://wiki.seeedstudio.com/Grove-Serial_Camera_Kit/)|
-| GROVE-GPS| | [Hello-GPS](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-GPS) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-GPS/)|
+| GROVE-GPS| <details><summary> GPSによる位置情報を検出 </summary><sub>NMEAおよびu-blox 6プロトコルのGPS電波を利用して、現在の場所を検出し、位置情報を取得できます。 </sub></details> | [Hello-GPS](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-GPS) | TODO| [公式Wiki](http://wiki.seeedstudio.com/Grove-GPS/)|
 | GROVE-発話認識| <details><summary>特定の音声をコマンドとして認識</summary><sub>「Start」「Stop」「Play music」など特定の音声コマンドを認識できます（全22種。[詳しくはwikiをご覧ください](http://wiki.seeed.cc/Grove-Speech_Recognizer/)）。<br>コマンドを認識すると、接続されたスピーカーから該当コマンドをリピートし、規定の値を返します。この値を通して、モーターや音楽プレーヤーなど他のデバイスを制御することが可能です。<br>ボードには、Nuvoton ISD9160（SoC）、マイク、SPIフラッシュ、1 x GROVEコネクタ、1 x スピーカコネクタを搭載。ARM Cortex-M0ベースのNuvoton ISD9160は、費用対効果の高い、強力な音声制御アプリケーション用ソリューションを提供します。内蔵マイクは無指向性なので、発話者の話している方向にかかわらず、安定した信号を記録できます。<br>高精度の認識率と非常に低い誤トリガー率を持ち、音声を使用したインタラクティブなデバイスなど、IoTアプリケーションの中でも最も興味深いものづくりの一つに貢献します。</sub></details>| [Hello-SpeechRecognizer](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-SpeechRecognizer) | 事前登録済みの音声の中から発話した音声を認識する| [公式Wiki](http://wiki.seeed.cc/Grove-Speech_Recognizer/)|
 
 ### 外部連携（SORACOMなど外部と連携するサンプル）
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| SORACOM metadata| | [Hello-SORACOM-metadata](Hello-SORACOM-metadata) |SORACOM メタサービスデータの取得の仕方|[公式サイト](https://dev.soracom.io/jp/start/metadata/)|
-| SORACOM Beam(IFTTT)| | [Hello-SORACOM-beam](Hello-SORACOM-beam) |SORACOM Beamを使って、HTTP PostでIFTTTに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
-| SORACOM Beam(AWS IoT Core)| | [Hello-Mqtt](Hello-Mqtt) |SORACOM Beamを使って、AWS IoT CoreにMQTTで接続する（双方向）|[公式サイト](https://dev.soracom.io/jp/docs/aws_iot_guide_console/)|
-| SORACOM Funnel(AWS IoT Core)| | [Hello-SORACOM-funnel](Hello-SORACOM-funnel) |SORACOM Funnelを使って、AWS IoT Coreに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/funnel_aws_iot/)|
+| SORACOM metadata| <details><summary> SORACOM Air のメタデータ情報の取得および更新 </summary><sub> SORACOM Airのデバイスが利用しているSIM等の情報を取得および更新できます。 </sub></details> | [Hello-SORACOM-metadata](Hello-SORACOM-metadata) |SORACOM メタサービスデータの取得の仕方|[公式サイト](https://dev.soracom.io/jp/start/metadata/)|
+| SORACOM Beam(IFTTT)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-SORACOM-beam](Hello-SORACOM-beam) |SORACOM Beamを使って、HTTP PostでIFTTTに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
+| SORACOM Beam(AWS IoT Core)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-Mqtt](Hello-Mqtt) |SORACOM Beamを使って、AWS IoT CoreにMQTTで接続する（双方向）|[公式サイト](https://dev.soracom.io/jp/docs/aws_iot_guide_console/)|
+| SORACOM Funnel(AWS IoT Core)| <details><summary> デバイスから特定のクラウドサービスへデータ等を直接転送するアダプター </summary><sub> デバイスから以下のクラウドサービスへのアダプターを提供します。<br>・AWS IoT<br>・Amazon Kinesis<br>・Amazon Kinesis Firehose<br>・Microsoft Azure Event Hubs<br>・Google Cloud Pub/Sub<br>・Amazon Kinesis Video Streams </sub></details> | [Hello-SORACOM-funnel](Hello-SORACOM-funnel) |SORACOM Funnelを使って、AWS IoT Coreに接続する（片方向）|[公式サイト](https://dev.soracom.io/jp/start/funnel_aws_iot/)|
 | 赤外線リモコン(テレビ操作)| <details><summary>赤外線信号でテレビを操作</summary><sub>赤外線信号を送信して、テレビの電源ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-tv](Hello-IrRemocon-tv) | テレビの電源ON/OFFを操作する赤外線信号を送信 |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
 | 赤外線リモコン(エアコン操作)| <details><summary>赤外線信号でエアコンを操作</summary><sub>赤外線信号を送信して、エアコンの冷房ON/暖房ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-aircon](Hello-IrRemocon-aircon) | エアコンの暖房ON->冷房ON->電源OFFを操作する赤外線信号を送信 |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
 | 赤外線リモコン(照明操作)| <details><summary>赤外線信号で照明を操作</summary><sub>赤外線信号を送信して、照明の電源ON/OFF等の制御を実施します。</sub></details> | [Hello-IrRemocon-light](Hello-IrRemocon-light) | 照明の電源ON->電源OFF操作する赤外線信号を送信 |[公式サイト](https://www.au.com/auhome/device/ura01a/)|
