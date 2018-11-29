@@ -22,7 +22,7 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| 内蔵フルカラーLED | | [Hello-LED](Hello-LED) |内蔵フルカラーLEDをLチカする|[公式リファレンス](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/reference-ja.md#ledsetrgb)|
+| 内蔵フルカラーLED | <details><summary>`Wio LTE M1/NB1(BG96)`上のフルカラーLED </summary><sub>RGB各256段階の組合せで最大1677万色の表示が可能です。</sub></details> | [Hello-LED](Hello-LED) |内蔵フルカラーLEDをLチカする|[公式リファレンス](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/reference-ja.md#ledsetrgb)|
 
 ### 各種センサー
 
