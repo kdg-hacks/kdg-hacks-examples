@@ -28,8 +28,8 @@ void setup() {
 }
 
 void loop() {
-  // 1秒毎にGrove 光 センサーの値をシリアルに出力します
-  // Wio LTE M1/NB1(BG96)のADCが12bitのため、0(暗い)〜4096(明るい)までの値が取得できます
+  // 1秒毎にGrove 光 センサーの値をシリアルに出力
+  // Wio LTE M1/NB1(BG96)のADCが12bitのため、0(暗い)〜4095(明るい)までの値が取得可能
   int sensorValue = analogRead(GSR);
   SerialUSB.println(sensorValue);
   delay(1000);
