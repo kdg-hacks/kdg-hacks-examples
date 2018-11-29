@@ -31,6 +31,7 @@ KDG HACKS 2018向けのサンプルコード集
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
 | GROVE-GSR| <details><summary>皮膚の電気伝導度を検出</summary><sub>睡眠の質のモニタリングなど、感情関連のプロジェクトを実現するのに最適です。<br>GSRは、Galvanic Skin Responseの略で、皮膚の電気伝導度を測定する方法です。<br>汗腺によって分泌される汗の量の変化などを測定すれば、うそ発見器も作成できるかもしれません。</sub></details> | [GSR-Monitor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/GSR-Monitor) | TODO |[公式Wiki](http://wiki.seeed.cc/Grove-GSR_Sensor/)|
+| GROVE-光| <details><summary>光量を計測</summary><sub>広範囲の光を感知し、電気信号を出力するアナログセンサモジュールです。<br>出力レンジは制御するボードのADコンバータに依存します（例えば、8 bit ADCなら0〜255を出力します）。</sub></details>| [Hello-LightSensor](Hello-LightSensor) | 1秒毎に光量を取得し、シリアルに出力します。光量は0(暗い)〜4096(明るい)までの値で取得できます。 |[公式Wiki](http://wiki.seeed.cc/Grove-Light_Sensor/)|
 
 #### Digital
 
@@ -38,7 +39,6 @@ KDG HACKS 2018向けのサンプルコード集
 |-----|-------|-------|----|------|
 | GROVE-Button| | [Hello-Button](Hello-Button) |ボタンの状態を取得する|[公式Wiki](http://wiki.seeedstudio.com/Grove-Button/)|
 | GROVE-Buzzer| | [Hello-Buzzer](Hello-Buzzer) |ブザーをON/OFFする|[公式Wiki](http://wiki.seeedstudio.com/Grove-Buzzer/)|
-| GROVE-光| <details><summary>光量を計測</summary><sub>広範囲の光を感知し、電気信号を出力するアナログセンサモジュールです。<br>出力レンジは制御するボードのADコンバータに依存します（例えば、8 bit ADCなら0〜255を出力します）。</sub></details>| TODO | (TODO:きしだ)|[公式Wiki](http://wiki.seeed.cc/Grove-Light_Sensor/)|
 | GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | 大気中の粒子状物質の濃度を測る | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
 | GROVE-磁気スイッチ| | [Hello-MagSW](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-MagSW) | TODO| [公式Wiki](http://wiki.seeed.cc/Grove-Magnetic_Switch/)|
 | GROVE-デジタル温度・湿度| | [Hello-TempHumi](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-TempHumi) | TODO| [公式Wiki](http://wiki.seeed.cc/Grove-TemperatureAndHumidity_Sensor/)|
