@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <p>以下のカラーピッカーをクリックすると、背景色を変更できます。この画面にカラーセンサーを近づけて動作を確認することができます。</p>
+        <input type ="color" id="bgcolor" value="#ff0000" onchange="$(document.body).css('background', $('#bgcolor').val());"></body>
+        <p>※ Google Chrome  バージョン: 70.0.3538.110 / MacOSでのみ確認。</p>
+    </body>
+</html>
