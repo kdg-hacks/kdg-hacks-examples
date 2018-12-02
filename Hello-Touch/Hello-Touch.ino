@@ -27,16 +27,23 @@
 #include <i2c_touch_sensor.h>
 #include <MPR121.h>
 
+WioCellular Wio;
 i2ctouchsensor touchsensor;
 
 long previousMillis = 0;
-long interval = 100;
+long interval = 1000;
 
 void setup() {
   // デバッグ用シリアル初期化
   SerialUSB.begin(115200);
   SerialUSB.println("");
   SerialUSB.println("--- START ---");
+
+  SerialUSB.println("### I/O Initialize.");
+  Wio.Init();
+
+  // GROVE端子へ電源供給を行う(D38以外向け）
+  Wio.PowerSupplyGrove(true);
 
   // needed by the GroveMultiTouch lib
   WireI2C.begin();
