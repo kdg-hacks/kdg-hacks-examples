@@ -3,7 +3,7 @@
 #include <WioCellLibforArduino.h>
 
 // 接続したボタンの位置に合わせて、下記のコメントを付けたり、外したりしてください。
-// #define BTN WIO_D38
+#define BTN WIO_D38
 // #define BTN WIO_D20
 
 WioCellular Wio;
