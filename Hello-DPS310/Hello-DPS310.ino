@@ -1,6 +1,8 @@
 #include <WioCellLibforArduino.h>
 #include "Dps310.h"
 
+#define RECEIVE_TIMEOUT (10000)
+
 WioCellular Wio;
 
 // Dps310 Opject
@@ -17,6 +19,25 @@ void setup()
   // Wi LTEoの初期化
   SerialUSB.println("### I/O Initialize.");
   Wio.Init();
+
+  SerialUSB.println("--- Power supply ON. ---");
+  Wio.PowerSupplyCellular(true);
+  delay(500);
+
+  SerialUSB.println("--- Turn on or reset. ---");
+  if (!Wio.TurnOnOrReset()) {
+    SerialUSB.println("### ERROR! ###");
+    return;
+  }
+
+  SerialUSB.println("--- Connecting to \"soracom.io\". ---");
+#ifdef ARDUINO_WIO_LTE_M1NB1_BG96
+  Wio.SetSelectNetwork(WioCellular::SELECT_NETWORK_MODE_MANUAL_IMSI);
+#endif
+  if (!Wio.Activate("soracom.io", "sora", "sora")) {
+    SerialUSB.println("### ERROR! ###");
+    return;
+  }
 
   SerialUSB.println("### Grove supply ON.");
   Wio.PowerSupplyGrove(true);
@@ -72,6 +93,7 @@ void loop()
   float pressure[pressureCount];
   uint8_t temperatureCount = 20;
   float temperature[temperatureCount];
+  char data[100];
 
   //This function writes the results of continuous measurements to the arrays given as parameters
   //The parameters temperatureCount and pressureCount should hold the sizes of the arrays temperature and pressure when the function is called
@@ -108,6 +130,54 @@ void loop()
     }
   }
 
+
+
+  SerialUSB.println("--- Open socket. ---");
+
+  // Open harvest connection
+  int connectId;
+  connectId = Wio.SocketOpen("harvest.soracom.io", 8514, WIO_UDP);
+  if (connectId < 0) {
+    SerialUSB.println("### ERROR! ###");
+    goto err;
+  }
+
+  // Send data.
+  SerialUSB.println("--- Send data. ---");
+  SerialUSB.print("Send:");
+
+  // create payload
+  sprintf(data,"{\"temperature\": %f, \"pressure\": %f, \"graph_pressure\": %f}", temperature[0], pressure[0], pressure[0] - 102800);
+  SerialUSB.println(data);
+  if (!Wio.SocketSend(connectId, data)) {
+    SerialUSB.println("### ERROR! ###");
+    goto err_close;
+  }
+
+  // Receive data.
+  SerialUSB.println("-- Receive data. ---");
+  int length;
+  length = Wio.SocketReceive(connectId, data, sizeof (data), RECEIVE_TIMEOUT);
+  if (length < 0) {
+    SerialUSB.println("### ERROR! ###");
+    goto err_close;
+  }
+
+  if (length == 0) {
+    SerialUSB.println("### RECEIVE TIMEOUT! ###");
+    goto err_close;
+  }
+
+  SerialUSB.print("Receive:");
+  SerialUSB.print(data);
+  SerialUSB.println("");
+
+err_close:
+  SerialUSB.println("### Close.");
+  if (!Wio.SocketClose(connectId)) {
+    SerialUSB.println("### ERROR! ###");
+  }
+err:
   //Wait some time, so that the Dps310 can refill its buffer
   delay(10000);
 }
