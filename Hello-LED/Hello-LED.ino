@@ -1,3 +1,4 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 #include <WioCellLibforArduino.h>
 
 WioCellular Wio;
