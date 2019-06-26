@@ -1,12 +1,15 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
+
 /*
  * Grove GSR Sensor をシリアルで眺めるサンプル
- * センサーは、Analog(A4) に繋ぐ。可変抵抗をちょっと触るだけで値が変化するので注意が必要。
+ * センサーは、Analog(A4 or A6) に繋ぐ。可変抵抗をちょっと触るだけで値が変化するので注意が必要。
  * http://wiki.seeedstudio.com/Grove-GSR_Sensor/
  */
 
 #include <WioCellLibforArduino.h>
 
-#define GSR (WIO_A4)
+// #define GSR (WIO_A4)
+// #define GSR (WIO_A6)
 
 WioCellular Wio;
 int sensorValue = 0;
@@ -15,7 +18,7 @@ int gsr_average = 0;
 void setup() {
   delay(200);
 
-  SerialUSB.begin(9600);
+  SerialUSB.begin(115200);
   SerialUSB.println("");
   SerialUSB.println("--- START ---------------------------------------------------");
 
