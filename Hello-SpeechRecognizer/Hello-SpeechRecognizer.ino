@@ -1,8 +1,7 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 // Wio LTE/M1 UART端子に発話認識モジュールをつないだ場合のサンプルプログラム
 
 #include <WioCellLibforArduino.h>
-
-HardwareSerial* SpeechSerial;
 
 WioCellular Wio;
 
@@ -31,31 +30,36 @@ const char *voiceBuffer[] = {
     "Go",
 };
 
-void SerialBegin(HardwareSerial* serial) {
-  SpeechSerial = serial;
-  SpeechSerial->begin(9600);
-}
-
 void setup() {
   SerialUSB.begin(115200);
   SerialUSB.println("");
   SerialUSB.println("--- START ---");
 
   SerialUSB.println("### I/O Initialize.");
-  SerialBegin(&SerialUART);
+  
   Wio.Init();
 
-  SerialUSB.println("### Power supply ON.");
+  // GROVE端子へ電源供給を行う(D38以外向け）
   Wio.PowerSupplyGrove(true);
+  
   delay(500);
+  
+  SerialUART.begin(9600);
+  
+  while (SerialUART.available()) 
+  {
+    SerialUART.read(); 
+  }
 
   SerialUSB.println("### Setup completed.");
 }
 
 void loop() {
-  if(SpeechSerial->available()) {
+  if(SerialUART.available()) {
     char cmd;
-    cmd = SpeechSerial->read();
-    SerialUSB.println(voiceBuffer[cmd - 1]);
+    cmd = SerialUART.read();
+    if((cmd > 0) && (cmd <= 22)) {
+      SerialUSB.println(voiceBuffer[cmd - 1]);
+    }
   }
 }
