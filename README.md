@@ -55,7 +55,6 @@ KDG HACKS 2018向けのサンプルコード集
 | GROVE-I2Cタッチ|<details><summary> 静電容量タッチセンサ</summary> |[Hello-I2CTouch](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Touch) |センサーを紙などで挟んで、何番のセンサーに触れたかを検知します。※導電性材料に直接触れてはいけません。3V-5V（5V推奨）| [公式Wiki](http://wiki.seeedstudio.com/Grove-I2C_Touch_Sensor/)|
 | GROVE-I2C三軸加速度| <details><summary>加速度による方向、ジェスチャ、動きを検出</summary><sub>加速度により、X,Y,Zの3軸の動きを検出し、値を取得できます。</sub></details> | [Hello-3Axis](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-3Axis) | 200ms毎に、X軸、Y軸、Z軸の加速度を取得する。取得可能な数値は、最大±1.5gまで| [公式Wiki](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-1.5g/)|
 | GROVE-温湿度| <details><summary>高精度で使いやすい温度湿度センサ</summary><sub>SHT31センサは、相対湿度の誤差±2%以内の最高精度の湿度センサです。<br>温度計としても-40度や125度といった極端な状況でも使用可能で、±0.3度の高精度を保持します。</sub></details>| [Hello-SHT31](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-SHT31) | 1秒間隔で温度と湿度を取得し、シリアルに出力します | [公式Wiki](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|
-| 音声合成Box| <details><summary>高品質な音声合成デバイス</summary><sub>KDDI総合研究所製音声合成ソフトN2を搭載したBox型音声合成デバイス<br />今回は2種類のBoxを用意、それぞれ別の声質を出すようにしました。</sub></details>| [n2](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/n2) |2種サンプル：(1)テキストを設定して喋らせる、(2)MQTTプロトコルを利用し、受信したテキストを喋らせる| [KDDI総合研究所/N2](https://www.kddi-research.jp/products/n2.html)|
 
 #### UART
 
