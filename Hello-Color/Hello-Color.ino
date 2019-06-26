@@ -1,5 +1,6 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 #include <WioCellLibforArduino.h>
-#include <GroveColorV2.h>
+#include "GroveColorV2.h"
 
 #define I2C_ADDRESS   (0x53)
 #define REG_POWER_CTL (0x2d)
