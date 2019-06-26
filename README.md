@@ -61,8 +61,8 @@ KDG HACKS 2018向けのサンプルコード集
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|-------|----|------|
-| GROVE-シリアルカメラ| <details><summary>カメラ</summary><sub>ワイドアングルレンズが付属します。<br>ワイドアングルレンズは何かをモニタリングする時などに便利。</sub></details>| TODO | (TODO:きしだ)| [公式Wiki](http://wiki.seeedstudio.com/Grove-Serial_Camera_Kit/)|
-| GROVE-GPS| <details><summary> GPSによる位置情報を検出 </summary><sub>NMEAおよびu-blox 6プロトコルのGPS電波を利用して、現在の場所を検出し、位置情報を取得できます。 </sub></details> | [Hello-GPS](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-GPS) | GPSセンサーから出力されているデータ（NMEA183フォーマット）の中で、位置情報が含まれている$GPGGAの行のみ抽出する| [公式Wiki](http://wiki.seeedstudio.com/Grove-GPS/)|
+| GROVE-シリアルカメラ| <details><summary>カメラ</summary><sub>ワイドアングルレンズが付属します。<br>ワイドアングルレンズは何かをモニタリングする時などに便利。</sub></details>| [Hello-CAMERA] | シリアルカメラで写真を撮影し、Base64の文字列化を行う。| [公式Wiki](http://wiki.seeedstudio.com/Grove-Serial_Camera_Kit/)|
+| GROVE-GPS| <details><summary> GPSによる位置情報を検出 </summary><sub>NMEAおよびu-blox 6プロトコルのGPS電波を利用して、現在の場所を検出し、位置情報を取得できます。 </sub></details> | [Hello-GPS](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-GPS) | GPSセンサーから日時、緯度、経度を取得する| [公式Wiki](http://wiki.seeedstudio.com/Grove-GPS/)|
 | GROVE-発話認識| <details><summary>特定の音声をコマンドとして認識</summary><sub>「Start」「Stop」「Play music」など特定の音声コマンドを認識できます（全22種。[詳しくはwikiをご覧ください](http://wiki.seeed.cc/Grove-Speech_Recognizer/)）。<br>コマンドを認識すると、接続されたスピーカーから該当コマンドをリピートし、規定の値を返します。この値を通して、モーターや音楽プレーヤーなど他のデバイスを制御することが可能です。<br>ボードには、Nuvoton ISD9160（SoC）、マイク、SPIフラッシュ、1 x GROVEコネクタ、1 x スピーカコネクタを搭載。ARM Cortex-M0ベースのNuvoton ISD9160は、費用対効果の高い、強力な音声制御アプリケーション用ソリューションを提供します。内蔵マイクは無指向性なので、発話者の話している方向にかかわらず、安定した信号を記録できます。<br>高精度の認識率と非常に低い誤トリガー率を持ち、音声を使用したインタラクティブなデバイスなど、IoTアプリケーションの中でも最も興味深いものづくりの一つに貢献します。</sub></details>| [Hello-SpeechRecognizer](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-SpeechRecognizer) | 事前登録済みの音声の中から発話した音声を認識する| [公式Wiki](http://wiki.seeed.cc/Grove-Speech_Recognizer/)|
 
 ### 外部連携（SORACOMなど外部と連携するサンプル）
