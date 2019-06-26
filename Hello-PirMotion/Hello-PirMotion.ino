@@ -1,8 +1,11 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 // GROVE PIRモーションセンサを繋いだ場合のサンプルプログラム
 
 #include <WioCellLibforArduino.h>
 
-#define PIR_MOTION_SENSOR (WIO_D38)
+// #define PIR_MOTION_SENSOR (WIO_D38)
+// #define PIR_MOTION_SENSOR (WIO_D20)
+
 #define INTERVAL (5000)
 
 WioCellular Wio;
@@ -13,6 +16,9 @@ void setup() {
   SerialUSB.println("--- START ---");
 
   Wio.Init();
+
+  // GROVE端子へ電源供給を行う(D38以外向け）
+  Wio.PowerSupplyGrove(true);
 
   pinMode(PIR_MOTION_SENSOR, INPUT);
 }
