@@ -1,3 +1,5 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
+
 // Wio LTE/M1 が直接インターネットサービスに繋がるか？
 
 #include <WioCellLibforArduino.h>
@@ -6,13 +8,11 @@
 #define USERNAME          "sora"
 #define PASSWORD          "sora"
 
-#define WEBURL       "http://httpbin.org/ip"  // JSONでアクセス元IPアドレスを返すHP
-
-// HTTPSだと失敗するので、SORACOMサービス使わないとダメだね。
+// #define WEBURL       "http://httpbin.org/ip"  // JSONでアクセス元IPアドレスを返すHP
 // #define WEBURL       "https://httpbin.org/ip"
 // #define WEBURL       "http://beam.soracom.io:8888/"
 
-#define INTERVAL          (60000)
+#define INTERVAL          (600000)
 
 boolean setup_flag = false;
 
@@ -39,6 +39,7 @@ void setup() {
   
   #ifdef ARDUINO_WIO_LTE_M1NB1_BG96
     SerialUSB.println("### SetSelectNetwork ###");
+    Wio.SetAccessTechnology(WioCellular::ACCESS_TECHNOLOGY_LTE_M1);
     Wio.SetSelectNetwork(WioCellular::SELECT_NETWORK_MODE_MANUAL_IMSI);
   #endif
 
