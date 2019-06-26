@@ -1,3 +1,4 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 // 電話のパラメータを取得してみよう！
 
 #include <WioCellLibforArduino.h>
