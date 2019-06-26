@@ -1,10 +1,10 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 // Wio LTE/M1 UART端子にGPS v1.2を繋いだ場合のサンプルプログラム
 
 #include <WioCellLibforArduino.h>
+#include "TinyGPS++.h"
 
-#define GPS_OVERFLOW_STRING "OVERFLOW"
-
-HardwareSerial* GpsSerial;
+TinyGPSPlus gps;
 
 WioCellular Wio;
 
@@ -14,47 +14,80 @@ void setup() {
   SerialUSB.println("");
   SerialUSB.println("--- START ---");
 
-  GpsBegin(&SerialUART);
-
   // Wi LTEoの初期化
   Wio.Init();
 
   // GROVE端子へ電源供給を行う(D38以外向け）
   Wio.PowerSupplyGrove(true);
+
+  SerialUART.begin(9600);
 }
 
 void loop() {
-  const char* data = GpsRead();
-  if (data != NULL && strncmp(data, "$GPGGA,", 7) == 0) {
-    SerialUSB.println(data);
+  if (SerialUART.available()) {
+    int inByte = SerialUART.read();
+    if(gps.encode(inByte)) {
+      displayInfo();
+    }
   }
 }
 
-char GpsData[100];
-int GpsDataLength;
+void displayInfo()
+{
+  SerialUSB.print(F("Location: "));
+  
+  if (gps.location.isValid()) {
+    SerialUSB.print(gps.location.lat(), 6);
+    SerialUSB.print(F(","));
+    SerialUSB.print(gps.location.lng(), 6);
+  } else {
+    SerialUSB.print(F("INVALID"));
+  }
 
-void GpsBegin(HardwareSerial* serial) {
-  GpsSerial = serial;
-  GpsSerial->begin(9600);
-  GpsDataLength = 0;
-}
+  SerialUSB.print(F("  Date/Time: "));
+  
+  if (gps.date.isValid()) {
+    SerialUSB.print(gps.date.month());
+    SerialUSB.print(F("/"));
+    SerialUSB.print(gps.date.day());
+    SerialUSB.print(F("/"));
+    SerialUSB.print(gps.date.year());
+  } else {
+    SerialUSB.print(F("INVALID"));
+  }
 
-const char* GpsRead() {
-  while (GpsSerial->available()) {
-    char data = GpsSerial->read();
-    if (data == '\r') continue;
-    if (data == '\n') {
-      GpsData[GpsDataLength] = '\0';
-      GpsDataLength = 0;
-      return GpsData;
+  SerialUSB.print(F(" "));
+  
+  if (gps.time.isValid()) {
+    if (gps.time.hour() < 10) {
+      SerialUSB.print(F("0"));
     }
     
-    if (GpsDataLength > (int)sizeof(GpsData) - 1) { // Overflow
-      GpsDataLength = 0;
-      return GPS_OVERFLOW_STRING;
+    SerialUSB.print(gps.time.hour());
+    SerialUSB.print(F(":"));
+    
+    if (gps.time.minute() < 10) {
+      SerialUSB.print(F("0"));
     }
-    GpsData[GpsDataLength++] = data;
+    
+    SerialUSB.print(gps.time.minute());
+    SerialUSB.print(F(":"));
+    
+    if (gps.time.second() < 10) {
+      SerialUSB.print(F("0"));
+    }
+
+    SerialUSB.print(gps.time.second());
+    SerialUSB.print(F("."));
+    
+    if (gps.time.centisecond() < 10) {
+      SerialUSB.print(F("0"));
+    }
+    
+    SerialUSB.print(gps.time.centisecond());
+  } else {
+    SerialUSB.print(F("INVALID"));
   }
 
-  return NULL;
+  SerialUSB.println();
 }
