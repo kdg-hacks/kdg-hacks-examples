@@ -1,9 +1,10 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 // Wio LTE/M1 D38 or D20端子にGROVE BUTTON(P)を繋いだ場合のサンプルプログラム
 
 #include <WioCellLibforArduino.h>
 
 // 接続したボタンの位置に合わせて、下記のコメントを付けたり、外したりしてください。
-#define BTN WIO_D38
+// #define BTN WIO_D38
 // #define BTN WIO_D20
 
 WioCellular Wio;
