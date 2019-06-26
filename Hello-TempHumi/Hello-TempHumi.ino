@@ -1,3 +1,4 @@
+// Board ver 1.2.0 / Library 1.7.0 OK 
 // Wio LTE/M1 D38 or D20端子にTemperature&Humidty Sensor(DHT11)を繋いだ場合のサンプルプログラム
 
 #include <WioCellLibforArduino.h>
