@@ -23,7 +23,7 @@ void setup() {
 
   SerialUSB.println("### I/O Initialize.");
   Wio.Init();
-  
+
   SerialUSB.println("### Power supply ON.");
   Wio.PowerSupplyCellular(true);
   delay(1000);
@@ -33,7 +33,7 @@ void setup() {
     SerialUSB.println("### ERROR! ###");
     return;
   }
-  
+
   #ifdef ARDUINO_WIO_LTE_M1NB1_BG96
     SerialUSB.println("### SetSelectNetwork MANUAL_IMSI ###");
     Wio.SetSelectNetwork(WioCellular::SELECT_NETWORK_MODE_MANUAL_IMSI);
@@ -45,7 +45,7 @@ void setup() {
   #endif
 
   SerialUSB.println("### Connecting to \"" APN "\".");
-  
+
   if (!Wio.Activate(APN, USERNAME, PASSWORD)) {
     SerialUSB.println("### APN SET ERROR! ###");
     return;
@@ -68,24 +68,24 @@ void loop() {
     setup();
     return;
   }
-  
+
   char data[100];
   int status;
-  
+
   SerialUSB.println("### IR Remocn Fan-Power-Signal Post.");
 
   // 扇風機の電源ON -> 風量変更 -> 電源OFF操作リクエスト
   // 利用する赤外線リモコンに応じて、以下の(1)と(2)部分のコメントアウト/アンコメントしてください
   // デフォルトは(1)です
   // (1)KDGHACKS001のラベルが付与された赤外線リモコンを利用する場合
-  sprintf(data, "[3410, 3412, 3410]");
+  sprintf(data, "[12270, 12271, 12270]");
   // (2)KDGHACKS002のラベルが付与された赤外線リモコンを利用する場合
-  //sprintf(data, "[3413, 3415, 3413]");
-  
+  //sprintf(data, "[12272, 12273, 12272]");
+
   SerialUSB.print("Post:");
   SerialUSB.print(data);
   SerialUSB.println("");
-  
+
   if (Wio.HttpPost(WEBURL, data, &status)) {
     SerialUSB.print("Status:");
     SerialUSB.println(status);
