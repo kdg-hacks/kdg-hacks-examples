@@ -1,5 +1,5 @@
 # kdg-hacks-examples
-KDG HACKS 2018向けのサンプルコード集
+KDG HACKS 向けのサンプルコード集
 
 ## `Wio LTE M1/NB1(BG96)` との対応づけ
 
