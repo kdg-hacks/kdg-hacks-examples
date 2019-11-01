@@ -19,3 +19,8 @@ M5Stackはいくつかのセンサー、Wi-Fi、Bluetooth、スクリーン、�
 
 AWS IoT 1-Click のマネジメントコンソール上で設定することにより Eメールや SMSの送信などの簡単なアクションを実行できるほか、AWS Lambda と連携することでクリック時に JavaScript、Java、Python、C# などの言語で記述した独自のビジネスロジックの実行が可能です。
 
+4. [`Jetson Nano`](jetson-nano/)
+準備中
+
+5. [`+ メッセージ`](plus-message/)
+準備中
