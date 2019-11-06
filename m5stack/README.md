@@ -50,7 +50,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT COLOR | 色センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/color) |
 | UNIT MUSIC | Makey Makey | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/makey) |
 | GROVE-温湿度| <details><summary>高精度で使いやすい温度湿度センサ</summary><sub>SHT31センサは、相対湿度の誤差±2%以内の最高精度の湿度センサです。<br>温度計としても-40度や125度といった極端な状況でも使用可能で、±0.3度の高精度を保持します。</sub></details>| [Hello-SHT31](Hello-SHT31) | 1秒間隔で温度と湿度を取得し、シリアルに出力します | [公式Wiki](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|
-| GROVE - 温湿度 | デジタル温度・湿度センサ(DHT11) |  [Hello-DHT11](Hello-DHT31)|1秒間隔で温度と湿度を取得し、シリアルに出力します| [公式Wiki](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/)
+| GROVE - 温湿度 | デジタル温度・湿度センサ(DHT11) |  [Hello-DHT11](Hello-DHT11)|1秒間隔で温度と湿度を取得し、シリアルに出力します| [公式Wiki](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/)
 
 
 ### UART (PORT C)
