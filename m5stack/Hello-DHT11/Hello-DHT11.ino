@@ -1,3 +1,12 @@
+/**
+ ** Name: Hello-DHT11.ino
+ *
+ * M5Stackで温湿度センサ(DHT11)を使うサンプル
+ * PORT Aにつないで用いる
+ *
+ * 参考: http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/
+ */
+
 #include "DHT.h"
 #include <Arduino.h>
 #include <M5Stack.h>
