@@ -424,7 +424,3 @@ int DHT::i2cWriteByte(uint8_t byte)
 	Wire.write(byte);
 	return Wire.endTransmission();
 }
-
-
-
-

@@ -1,7 +1,6 @@
 #include "DHT.h"
 #include <Arduino.h>
 #include <M5Stack.h>
-//#include <Wire.h>
 
 #define DHTPIN 22     // what pin we're connected to
 #define DHTTYPE DHT11   // DHT 11 
