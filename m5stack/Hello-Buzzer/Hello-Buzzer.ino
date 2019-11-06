@@ -1,3 +1,12 @@
+/**
+ ** Name: Hello-Buzzer.ino
+ *
+ * M5StackでGrove-Buzzerを使うサンプル
+ * PORT Aにつないで用いる
+ *
+ * 参考: http://wiki.seeedstudio.com/Grove-Buzzer/
+ */
+
 void setup() {
   // put your setup code here, to run once:
     pinMode(22, OUTPUT);
