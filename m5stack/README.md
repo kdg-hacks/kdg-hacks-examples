@@ -71,8 +71,8 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 |-----|-------|:-------:|:----:|------|
 | HTTP GET リクエスト | HTTP GETプロトコルで、Webサーバからデータを取得する | [Hello-HttpGet](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-HttpGet) | TODO | - |
 | HTTP POST リクエスト | HTTP GETプロトコルで、Webサーバからデータを取得する | [Hello-HttpPost](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-HttpPost) | TODO | - |
+| AWS IoT | AWS IoTに接続し、mqttでpub/subする | [Hello-AwsIoT](Hello-AwsIoT) | 5秒おきにpublishするサンプル。[詳細](Hello-AwsIoT/README.md) | - |
 | SORACOM XXX | SORACOM XXX | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
-| AWS XXX | AWS XXX | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 | 赤外線リモコン操作 | 赤外線リモコン操作 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 | 赤外線リモコンセンサー値取得 | 赤外線リモコンセンサー値取得 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<!-- saved from url=(0166)http://kyokucho1989.chillout.jp/2019/08/19/m5stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Faws-iot%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9/ -->
+<html lang="ja" prefix="og: https://ogp.me/ns#" class="gr__kyokucho1989_chillout_jp"><!--<![endif]--><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		
+		
+		<link rel="alternate" type="application/rss+xml" title="マトリョーシカ的IoTブログ RSS Feed" href="http://kyokucho1989.chillout.jp/feed/">
+		<link rel="pingback" href="http://kyokucho1989.chillout.jp/xmlrpc.php">
+		<!--[if lt IE 9]>
+		<script src="http://kyokucho1989.chillout.jp/wp-content/themes/stingerplus2/js/html5shiv.js"></script>
+		<![endif]-->
+				<!-- JM Twitter Cards by Julien Maury 10.0.1 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@kyokucho_1989">
+<meta name="twitter:site" content="@kyokucho1989">
+<meta name="twitter:title" content="M5Stackを利用したAWS IoTの簡単な使い方">
+<meta name="twitter:image" content="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/9.jpg">
+<!-- /JM Twitter Cards by Julien Maury 10.0.1 -->
+<title>M5Stackを利用したAWS IoTの簡単な使い方 | マトリョーシカ的IoTブログ</title>
+
+<!-- All in One SEO Pack 3.2.10 によって Michael Torbert の Semper Fi Web Design[1439,1495] -->
+<script type="text/javascript" async="" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/analytics.js"></script><script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://kyokucho1989.chillout.jp/#organization","url":"http://kyokucho1989.chillout.jp/","name":"\u30de\u30c8\u30ea\u30e7\u30fc\u30b7\u30ab\u7684IoT\u30d6\u30ed\u30b0","sameAs":[]},{"@type":"WebSite","@id":"http://kyokucho1989.chillout.jp/#website","url":"http://kyokucho1989.chillout.jp/","name":"\u30de\u30c8\u30ea\u30e7\u30fc\u30b7\u30ab\u7684IoT\u30d6\u30ed\u30b0","publisher":{"@id":"http://kyokucho1989.chillout.jp/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://kyokucho1989.chillout.jp/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#webpage","url":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/","inLanguage":"ja","name":"M5Stack\u3092\u5229\u7528\u3057\u305fAWS IoT\u306e\u7c21\u5358\u306a\u4f7f\u3044\u65b9","isPartOf":{"@id":"http://kyokucho1989.chillout.jp/#website"},"image":{"@type":"ImageObject","@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#primaryimage","url":"http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/9.jpg","width":160,"height":160},"primaryImageOfPage":{"@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#primaryimage"},"datePublished":"2019-08-18T21:58:20+00:00","dateModified":"2019-08-19T13:15:20+00:00"},{"@type":"Article","@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#article","isPartOf":{"@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#webpage"},"author":{"@id":"http://kyokucho1989.chillout.jp/author/kyokucho1989/#author"},"headline":"M5Stack\u3092\u5229\u7528\u3057\u305fAWS IoT\u306e\u7c21\u5358\u306a\u4f7f\u3044\u65b9","datePublished":"2019-08-18T21:58:20+00:00","dateModified":"2019-08-19T13:15:20+00:00","commentCount":0,"mainEntityOfPage":{"@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#webpage"},"publisher":{"@id":"http://kyokucho1989.chillout.jp/#organization"},"articleSection":"M5Stack","image":{"@type":"ImageObject","@id":"http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/#primaryimage","url":"http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/9.jpg","width":160,"height":160}},{"@type":"Person","@id":"http://kyokucho1989.chillout.jp/author/kyokucho1989/#author","name":"kyokucho1989","sameAs":[],"image":{"@type":"ImageObject","@id":"http://kyokucho1989.chillout.jp/#personlogo","url":"http://1.gravatar.com/avatar/485dfa398e1ad2e2020a99c77b38ec75?s=96&d=mm&r=g","width":96,"height":96,"caption":"kyokucho1989"}}]}</script>
+<link rel="canonical" href="http://kyokucho1989.chillout.jp/2019/08/19/m5stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Faws-iot%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9/">
+<meta property="og:type" content="activity">
+<meta property="og:title" content="M5Stackを利用したAWS IoTの簡単な使い方 | マトリョーシカ的IoTブログ">
+<meta property="og:description" content="1.問題　AWS IoTの具体的な使い方がわからない 「IoTの利用にはAWS IoTというサービスが有用なのは知っている。けれど、具体的にどうやってはじめればいいのだろう？」 そう思ったあなた。この記事ではそんな疑問を解消する。 2.解決策：M5StackとAWS IoTの連携方法を説明 ブログ内で紹介している小型のマイコン 「M5Stack」を用いてAWS IoTの簡単な使い方を説明する。 参">
+<meta property="og:url" content="http://kyokucho1989.chillout.jp/2019/08/19/m5stackを利用したaws-iotの簡単な使い方/">
+<meta property="og:site_name" content="マトリョーシカ的IoTブログ">
+<meta property="og:image" content="http://kyokucho1989.chillout.jp/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="M5Stackを利用したAWS IoTの簡単な使い方 | マトリョーシカ的IoTブログ">
+<meta name="twitter:description" content="1.問題　AWS IoTの具体的な使い方がわからない 「IoTの利用にはAWS IoTというサービスが有用なのは知っている。けれど、具体的にどうやってはじめればいいのだろう？」 そう思ったあなた。この記事ではそんな疑問を解消する。 2.解決策：M5StackとAWS IoTの連携方法を説明 ブログ内で紹介している小型のマイコン 「M5Stack」を用いてAWS IoTの簡単な使い方を説明する。 参">
+<meta name="twitter:image" content="http://kyokucho1989.chillout.jp/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
+<!-- All in One SEO Pack -->
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/kyokucho1989.chillout.jp\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="crayon-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="aalb_basics_css-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/aalb_basics.css" type="text/css" media="all">
+<link rel="stylesheet" id="pz-linkcard-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="fonts-googleapis-montserrat-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="normalize-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/normalize.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="single2-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/st-kanricss.php" type="text/css" media="all">
+<link rel="stylesheet" id="single-css" href="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/st-tagcss.php" type="text/css" media="all">
+<script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/jquery.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/kyokucho1989.chillout.jp\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/crayon.min.js"></script>
+<link rel="https://api.w.org/" href="http://kyokucho1989.chillout.jp/wp-json/">
+<link rel="shortlink" href="http://kyokucho1989.chillout.jp/?p=52">
+<link rel="alternate" type="application/json+oembed" href="http://kyokucho1989.chillout.jp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://kyokucho1989.chillout.jp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F&amp;format=xml">
+<link rel="canonical" href="http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; }
+</style>
+							
+
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-30328515-4');
+</script>
+
+	</head>
+	<body class="post-template-default single single-post postid-52 single-format-standard custom-background not-front-page" data-gr-c-s-loaded="true">
+				<div id="st-ami">
+				<div id="wrapper" class="">
+				<div id="wrapper-in">
+					<header id="">
+						<div id="headbox-bg">
+							<div class="clearfix" id="headbox">
+										<nav id="s-navi" class="pcnone">
+			<dl class="acordion">
+				<dt class="trigger">
+					<p><span class="op"><i class="fa fa-bars"></i></span></p>
+
+				</dt>
+
+				<dd class="acordion_tree">
+
+
+										<div class="menu-m5stack-container"><ul id="menu-m5stack" class="menu"><li id="menu-item-42" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-42 menu-item-expanded"><i class="fa fa-angle-right"></i><a href="http://kyokucho1989.chillout.jp/category/m5stack/">M5Stack</a></li>
+</ul></div>					<div class="clear"></div>
+
+				</dd>
+			</dl>
+		</nav>
+										<div id="header-l">
+											
+		<!-- キャプション -->
+					<p class="descr">
+				IoTでいろいろたのしいことをやっていくブログ			</p>
+				<!-- ロゴ又はブログ名 -->
+					<p class="sitename"><a href="http://kyokucho1989.chillout.jp/">
+									マトリョーシカ的IoTブログ							</a></p>
+				<!-- ロゴ又はブログ名ここまで -->
+
+	
+									</div><!-- /#header-l -->
+								<div id="header-r" class="smanone">
+																		
+								</div><!-- /#header-r -->
+							</div><!-- /#headbox-bg -->
+						</div><!-- /#headbox clearfix -->
+					
+<div id="gazou-wide">
+			<div id="st-menubox">
+			<div id="st-menuwide">
+				<nav class="smanone clearfix"><ul id="menu-m5stack-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-42"><a href="http://kyokucho1989.chillout.jp/category/m5stack/">M5Stack</a></li>
+</ul></nav>			</div>
+		</div>
+	</div>
+<script async="" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/f.txt"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8633077020172376",
+          enable_page_level_ads: true
+     });
+</script>
+					</header>
+					<div id="content-w">
+<div id="content" class="clearfix">
+	<div id="contentInner">
+
+		<main>
+			<article>
+				<div id="post-52" class="st-post post-52 post type-post status-publish format-standard has-post-thumbnail hentry category-m5stack">
+
+			
+									
+
+					<!--ぱんくず -->
+					<div id="breadcrumb">
+					<ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+							 <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="http://kyokucho1989.chillout.jp/" itemprop="item"><span itemprop="name">HOME</span></a> &gt; <meta itemprop="position" content="1"></li>
+													<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="http://kyokucho1989.chillout.jp/category/m5stack/" itemprop="item">
+							<span itemprop="name">M5Stack</span> </a> &gt;<meta itemprop="position" content="2"></li> 
+											</ol>
+					</div>
+					<!--/ ぱんくず -->
+
+					<!--ループ開始 -->
+										
+										<p class="st-catgroup">
+					<a href="http://kyokucho1989.chillout.jp/category/m5stack/" title="View all posts in M5Stack" rel="category tag"><span class="catname st-catid2">M5Stack</span></a>					</p>
+									
+
+					<h1 class="entry-title">M5Stackを利用したAWS IoTの簡単な使い方</h1>
+
+					<div class="blogbox ">
+						<p><span class="kdate">
+															投稿日：<time class="updated" datetime="2019-08-19T06:58:20+0900">2019年8月19日</time>
+													</span></p>
+					</div>
+
+					<div class="mainbox">
+						<div id="nocopy"><!-- コピー禁止エリアここから -->
+
+																			
+							<div class="entry-content">
+								<h2>1.問題　AWS IoTの具体的な使い方がわからない</h2>
+<p>　「IoTの利用にはAWS IoTというサービスが有用なのは知っている。けれど、具体的にどうやってはじめればいいのだろう？」<br>
+ そう思ったあなた。この記事ではそんな疑問を解消する。</p>
+<h2>2.解決策：M5StackとAWS IoTの連携方法を説明</h2>
+<p>　ブログ内で紹介している小型のマイコン 「M5Stack」を用いてAWS IoTの簡単な使い方を説明する。</p>
+<h3>参考：</h3>
+<p>以下のサイトに非常にお世話になった。<br>
+</p><div class="linkcard"><div class="lkc-external-wrap"><a class="lkc-link no_icon" href="https://karaage.hatenadiary.jp/entry/2018/09/05/073000" target="_blank"><div class="lkc-card"><div class="lkc-info"><img class="lkc-favicon" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/favicons" alt="" width="16" height="16"><div class="lkc-domain">karaage. [からあげ]</div>&nbsp;<div class="lkc-share"> <div class="lkc-sns-hb">18&nbsp;users</div></div></div><div class="lkc-content"><figure class="lkc-thumbnail"><img class="lkc-thumbnail-img" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/96dc0e3f707fd64f8a5bfb3ca8155becb113ac11d984ea95764d64dea2570f98" alt=""></figure><div class="lkc-title"><div class="lkc-title-text">M5Stack（ESP32マイコン）とAWS IoTで始めるIoT入門 - karaage. [からあげ]</div></div><div class="lkc-url"><cite>https://karaage.hatenadiary.jp/entry/2018/09/05/073000</cite></div><div class="lkc-excerpt">M5Stack（ESP32マイコン）とAWSを繋ぐテスト 最近ESP32マイコンが色々な用途につかえそうで面白そうだなーと思っています。Interface 2018年9月の特集は、色々な応用例も書かれていて中々良かったです。 Interface(インターフェース) 2018年 09 月号出版社/メーカー:...</div></div><div class="clear"></div></div></a></div></div><br>
+　<p></p>
+<h2>3.具体的なやり方</h2>
+<h3>3-1. ポリシーの作成</h3>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.28.37.png" alt="" width="2510" height="1338" class="alignnone size-full wp-image-53" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.37.png 2510w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.37-300x160.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.37-768x409.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.37-1024x546.png 1024w" sizes="(max-width: 2510px) 100vw, 2510px"></p>
+<p>AWS IoTを開く。AWS IoTコンソールというのが表示される。ここで「IoT Core」をクリック<br>
+　<br>
+ 　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.28.54.png" alt="" width="2508" height="1276" class="alignnone size-full wp-image-54" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.54.png 2508w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.54-300x153.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.54-768x391.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.28.54-1024x521.png 1024w" sizes="(max-width: 2508px) 100vw, 2508px"></p>
+<p>AWS IoTのページから「安全性」&gt;「ポリシー」と移動する。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.29.25.png" alt="" width="2514" height="1328" class="alignnone size-full wp-image-55" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.25.png 2514w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.25-300x158.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.25-768x406.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.25-1024x541.png 1024w" sizes="(max-width: 2514px) 100vw, 2514px"></p>
+<p>右上の作成ボタンをクリックし、ポリシーを作成する。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.29.51.png" alt="" width="2508" height="1332" class="alignnone size-full wp-image-56" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.51.png 2508w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.51-300x159.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.51-768x408.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.29.51-1024x544.png 1024w" sizes="(max-width: 2508px) 100vw, 2508px"></p>
+<p>名前は「p1」とする。ステートメントを追加する際はベーシックモードに切り替えて、（はじめはアドバンスドモードとなっている）以下のコードを記入する。</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b1699b703268663" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important; margin-top: -18px; display: none;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iot:*",
+      "Resource": "*"
+    }
+  ]
+}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b1699b703268663-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b1699b703268663-2">2</div><div class="crayon-num" data-line="crayon-5dbf760b1699b703268663-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b1699b703268663-4">4</div><div class="crayon-num" data-line="crayon-5dbf760b1699b703268663-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b1699b703268663-6">6</div><div class="crayon-num" data-line="crayon-5dbf760b1699b703268663-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b1699b703268663-8">8</div><div class="crayon-num" data-line="crayon-5dbf760b1699b703268663-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b1699b703268663-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b1699b703268663-1"><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b1699b703268663-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"Version"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"2012-10-17"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5dbf760b1699b703268663-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"Statement"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b1699b703268663-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5dbf760b1699b703268663-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"Effect"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Allow"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b1699b703268663-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"Action"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"iot:*"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5dbf760b1699b703268663-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"Resource"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"*"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b1699b703268663-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5dbf760b1699b703268663-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b1699b703268663-10"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0018 seconds] -->
+<p></p>
+<p>そして右下に表示される「作成」ボタンをクリックする。<br>
+ 　<br>
+  　</p>
+<h3>3-2.モノの作成</h3>
+<p>　<br>
+<img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.43.28.png" alt="" width="2512" height="1318" class="alignnone size-full wp-image-60" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.28.png 2512w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.28-300x157.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.28-768x403.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.28-1024x537.png 1024w" sizes="(max-width: 2512px) 100vw, 2512px"></p>
+<p>　次にモノを作成する。管理&gt;モノに移動し、モノの作成を選択する。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.43.40.png" alt="" width="2508" height="1332" class="alignnone size-full wp-image-61" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.40.png 2508w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.40-300x159.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.40-768x408.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.43.40-1024x544.png 1024w" sizes="(max-width: 2508px) 100vw, 2508px"></p>
+<p>　単一のAWS IoTのモノの登録する。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.44.10.png" alt="" width="2504" height="1326" class="alignnone size-full wp-image-62" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.44.10.png 2504w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.44.10-300x159.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.44.10-768x407.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.44.10-1024x542.png 1024w" sizes="(max-width: 2504px) 100vw, 2504px"></p>
+<p>デバイスの名前を任意に書く。（ここではmono-1とした）　あとのタイプの適応などは行わなくていいのでページの右下にある次へを押す。<br>
+ 　<br>
+  　</p>
+<h3>3-3. 証明書の作成</h3>
+<p>　<img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.51.31.png" alt="" width="2514" height="1272" class="alignnone size-full wp-image-64" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.31.png 2514w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.31-300x152.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.31-768x389.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.31-1024x518.png 1024w" sizes="(max-width: 2514px) 100vw, 2514px"><br>
+　証明書を追加する。1-Click　証明書作成（推奨）を選択する。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.51.43.png" alt="" width="2488" height="1250" class="alignnone size-full wp-image-65" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43.png 2488w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43-300x151.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43-768x386.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43-1024x514.png 1024w" sizes="(max-width: 2488px) 100vw, 2488px"><br>
+　証明書が作成された。証明書、パブリックキー、プライベートキーをそれぞれダウンロードしておく。また、AWS IoT のルートCAというものもダウンロードする。リンク先をクリックすると別ページが開く。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.52.06.png" alt="" width="2508" height="1228" class="alignnone size-full wp-image-66" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.52.06.png 2508w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.52.06-300x147.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.52.06-768x376.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.52.06-1024x501.png 1024w" sizes="(max-width: 2508px) 100vw, 2508px"></p>
+<p>Amazon　ルートCA 1を右クリックして、リンク先を別名で保存する。<br>
+終了したらこのページは閉じる。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.51.43.png" alt="" width="2488" height="1250" class="alignnone size-full wp-image-65" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43.png 2488w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43-300x151.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43-768x386.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.51.43-1024x514.png 1024w" sizes="(max-width: 2488px) 100vw, 2488px"><br>
+　「有効化」をクリックする。次に一番下のポリシーをアタッチを選択する。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-5.59.12.png" alt="" width="2502" height="1218" class="alignnone size-full wp-image-67" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.59.12.png 2502w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.59.12-300x146.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.59.12-768x374.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-5.59.12-1024x498.png 1024w" sizes="(max-width: 2502px) 100vw, 2502px"><br>
+　モノにポリシーを追加させる。先ほど作成したポリシー（p1)のチェックボックスを選択し、モノの登録を押す。</p>
+<p>これでAWS IoT側の登録が終了した。<br>
+ 　<br>
+  　</p>
+<h3>3-4. Arduino 側の設定</h3>
+<p>　<img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-6.02.20.png" alt="" width="1598" height="894" class="alignnone size-full wp-image-69" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.02.20.png 1598w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.02.20-300x168.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.02.20-768x430.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.02.20-1024x573.png 1024w" sizes="(max-width: 1598px) 100vw, 1598px"></p>
+<p>　Arduino IDEのライブラリに新しいライブラリを追加する必要がある。スケッチ &gt; ライブラリをインクルード &gt;  ライブラリの管理からpubsubClientをインストールする。<br>
+ 　<br>
+  　</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-11-6.06.35.png" alt="" width="1260" height="814" class="alignnone size-full wp-image-70" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.06.35.png 1260w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.06.35-300x194.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.06.35-768x496.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-11-6.06.35-1024x662.png 1024w" sizes="(max-width: 1260px) 100vw, 1260px"></p>
+<p>　ここでパケットサイズというものを増やしておく。「PubSubClient.h」を開く。場所は私の場合は</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b169ae653030333" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important; margin-top: -18px; display: none;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;"> Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b169ae653030333-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b169ae653030333-1"><span class="crayon-h"> </span><span class="crayon-v">Documents</span><span class="crayon-o">/</span><span class="crayon-v">Arduino</span><span class="crayon-o">/</span><span class="crayon-v">libraries</span><span class="crayon-o">/</span><span class="crayon-v">PubSubClient</span><span class="crayon-o">/</span><span class="crayon-v">src</span><span class="crayon-o">/</span><span class="crayon-v">PubSubClient</span><span class="crayon-sy">.</span><span class="crayon-v">h</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p></p>
+<p>にあった。上記の</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b169b4136772695" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">#define MQTT_MAX_PACKET_SIZE 128
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b169b4136772695-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169b4136772695-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b169b4136772695-1"><span class="crayon-p">#define MQTT_MAX_PACKET_SIZE 128</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169b4136772695-2">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>を</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b169b7951607037" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">#define MQTT_MAX_PACKET_SIZE 2048</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b169b7951607037-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b169b7951607037-1"><span class="crayon-p">#define MQTT_MAX_PACKET_SIZE 2048</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>に変更して保存する。<br>
+ 　<br>
+  　</p>
+<h3>3-5. M5StackとAWSの連携</h3>
+<p>連携を行う。karaageという人がコードを公開しているのでそれを参考にする。<br>
+https://github.com/karaage0703/esp32-sample</p>
+<p>M5StackなのでM5Stack-iotを選択する。<br>
+ コードの中のいくつかの部分を置き換える必要がある。</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b169ba470774951" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">
+ // WiFi Setting
+const char* ssid = "";
+const char* password = "";
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b169ba470774951-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169ba470774951-2">2</div><div class="crayon-num" data-line="crayon-5dbf760b169ba470774951-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169ba470774951-4">4</div><div class="crayon-num" data-line="crayon-5dbf760b169ba470774951-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b169ba470774951-1">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169ba470774951-2"><span class="crayon-h"> </span><span class="crayon-c">// WiFi Setting</span></div><div class="crayon-line" id="crayon-5dbf760b169ba470774951-3"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">ssid</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169ba470774951-4"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">password</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5dbf760b169ba470774951-5">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p></p>
+<p>　ここは自分が使っているWifiのIDとパスワードを入力する。ルーターの裏に書かれている。</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b169bd422307172" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">// AWS IoT Setting
+const char* awsEndpoint = "xxx.xxx.xxx.amazonaws.com";
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b169bd422307172-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169bd422307172-2">2</div><div class="crayon-num" data-line="crayon-5dbf760b169bd422307172-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b169bd422307172-1"><span class="crayon-c">// AWS IoT Setting</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169bd422307172-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">awsEndpoint</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"xxx.xxx.xxx.amazonaws.com"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5dbf760b169bd422307172-3">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p></p>
+<p>awsEndpointはAWS IoTの設定画面から「設定」ボタンを押して確認できる。<br>
+ 　<br>
+  　</p>
+<p>　</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5dbf760b169c0503870017" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon" style="background-size: 48px 128px; background-image: url(&quot;http://kyokucho1989.chillout.jp/wp-content/plugins/crayon-syntax-highlighter/css/images/toolbar/buttons@2x.png&quot;);"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">
+const int awsPort = 8883;
+const char* pubTopic = "pub01";
+const char* rootCA = "-----BEGIN CERTIFICATE-----\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"-----END CERTIFICATE-----\n";
+const char* certificate = "-----BEGIN CERTIFICATE-----\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"-----END CERTIFICATE-----\n";
+const char* privateKey = "-----BEGIN RSA PRIVATE KEY-----\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" \
+"-----END RSA PRIVATE KEY-----\n";
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-2">2</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-4">4</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-6">6</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-8">8</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-10">10</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-12">12</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-14">14</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-16">16</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5dbf760b169c0503870017-18">18</div><div class="crayon-num" data-line="crayon-5dbf760b169c0503870017-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbf760b169c0503870017-1">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">int</span><span class="crayon-h"> </span><span class="crayon-v">awsPort</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">8883</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-3"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">pubTopic</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"pub01"</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-4"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">rootCA</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"-----BEGIN CERTIFICATE-----\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-5"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-6"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-7"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-8"><span class="crayon-s">"-----END CERTIFICATE-----\n"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-9"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">certificate</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"-----BEGIN CERTIFICATE-----\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-10"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-11"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-12"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-13"><span class="crayon-s">"-----END CERTIFICATE-----\n"</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-14"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-t">char</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">privateKey</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"-----BEGIN RSA PRIVATE KEY-----\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-15"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-16"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-17"><span class="crayon-s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div><div class="crayon-line crayon-striped-line" id="crayon-5dbf760b169c0503870017-18"><span class="crayon-s">"-----END RSA PRIVATE KEY-----\n"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5dbf760b169c0503870017-19">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0009 seconds] -->
+<p></p>
+<p>rootCA,certificate,privateKeyはそれぞれ単純な文字列である。以前ダウンロードしたものをそれぞれテキストエディタで開き、貼り付ける。<br>
+あとはM5Stackにコードを流す。<br>
+ 　<br>
+  　</p>
+<h3>3-6.AWS IoTのテスト画面で確認</h3>
+<p>　今回のコードはM5StackからAWS IoTにメッセージを送信するというものだ。実際にメッセージが流れているのか確認しよう。AWS IoTの「テスト」を押す。</p>
+<p><img src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/スクリーンショット-2019-08-12-5.12.30.png" alt="" width="2372" height="1218" class="alignnone size-full wp-image-74" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-12-5.12.30.png 2372w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-12-5.12.30-300x154.png 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-12-5.12.30-768x394.png 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/スクリーンショット-2019-08-12-5.12.30-1024x526.png 1024w" sizes="(max-width: 2372px) 100vw, 2372px"><br>
+ 　<br>
+  　</p>
+<p>　写真のようにトピックのサブスクリプションに「pub01」と記入し、トピックへのサブスクライブを押す。そして現れたpub01ボタンを押す。あとはM5Stackを実行しながら待てばいい。<br>
+ 　<br>
+  　</p>
+<h3>実行例：</h3>
+<iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/saved_resource.html" allowtransparency="true" allowfullscreen="true" frameborder="0" height="844" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 658px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+<p><script async="" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/embed.js"></script></p>
+<p>　カウントアップしている数字が確認できた。<br>
+ 　<br>
+  　</p>
+<h2>4.参考サイト</h2>
+<p>　おわり。これからもIoTに関わる様々な情報を提供する。以下、参考サイト：</p>
+<p></p><div class="linkcard"><div class="lkc-external-wrap"><a class="lkc-link no_icon" href="https://karaage.hatenadiary.jp/entry/2018/09/05/073000" target="_blank"><div class="lkc-card"><div class="lkc-info"><img class="lkc-favicon" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/favicons" alt="" width="16" height="16"><div class="lkc-domain">karaage. [からあげ]</div>&nbsp;<div class="lkc-share"> <div class="lkc-sns-hb">18&nbsp;users</div></div></div><div class="lkc-content"><figure class="lkc-thumbnail"><img class="lkc-thumbnail-img" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/96dc0e3f707fd64f8a5bfb3ca8155becb113ac11d984ea95764d64dea2570f98" alt=""></figure><div class="lkc-title"><div class="lkc-title-text">M5Stack（ESP32マイコン）とAWS IoTで始めるIoT入門 - karaage. [からあげ]</div></div><div class="lkc-url"><cite>https://karaage.hatenadiary.jp/entry/2018/09/05/073000</cite></div><div class="lkc-excerpt">M5Stack（ESP32マイコン）とAWSを繋ぐテスト 最近ESP32マイコンが色々な用途につかえそうで面白そうだなーと思っています。Interface 2018年9月の特集は、色々な応用例も書かれていて中々良かったです。 Interface(インターフェース) 2018年 09 月号出版社/メーカー:...</div></div><div class="clear"></div></div></a></div></div><br>
+<div class="linkcard"><div class="lkc-external-wrap"><a class="lkc-link no_icon" href="https://qiita.com/networkyohan69/items/4f028500d520dbf14be1" target="_blank"><div class="lkc-card"><div class="lkc-info"><img class="lkc-favicon" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/favicons(1)" alt="" width="16" height="16"><div class="lkc-domain">Qiita</div>&nbsp;<div class="lkc-share"> <div class="lkc-sns-hb">2&nbsp;users</div></div></div><div class="lkc-content"><figure class="lkc-thumbnail"><img class="lkc-thumbnail-img" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/02f4dfc39658231e4aaf63e85060d50c9ac23fde714f079834a2f46db760351c" alt=""></figure><div class="lkc-title"><div class="lkc-title-text">ESP32〜AWS IoTでMQTT通信して詰んだ話【ClientID】 - Qiita</div></div><div class="lkc-url"><cite>https://qiita.com/networkyohan69/items/4f028500d520dbf14be1</cite></div><div class="lkc-excerpt">#IoTに関するAWS- AWS IoT- AWS IoT 1-click- AWS Greengrass Core- AWS FreeRTOSいくつかある...非常に関心があるのでいずれ使ってみようと思います。#A...</div></div><div class="clear"></div></div></a></div></div><br>
+<div class="linkcard"><div class="lkc-external-wrap"><a class="lkc-link no_icon" href="https://blog.maripo.org/2017/07/esp32-aws-iot/" target="_blank"><div class="lkc-card"><div class="lkc-info"><img class="lkc-favicon" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/favicons(2)" alt="" width="16" height="16"><div class="lkc-domain">コーヒーサーバは香炉である</div>&nbsp;<div class="lkc-share"> <div class="lkc-sns-hb">4&nbsp;users</div></div></div><div class="lkc-content"><figure class="lkc-thumbnail"><img class="lkc-thumbnail-img" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/https___blog.maripo.org_2017_07_esp32-aws-iot_" alt=""></figure><div class="lkc-title"><div class="lkc-title-text">ESP32でAWS IoTに繋いでThing Shadowを弄る</div></div><div class="lkc-url"><cite>https://blog.maripo.org/2017/07/esp32-aws-iot/</cite></div><div class="lkc-excerpt"></div></div><div class="clear"></div></div></a></div></div><p></p>
+							</div>
+						</div><!-- コピー禁止エリアここまで -->
+
+												
+					<div class="adbox">
+				
+							        
+	
+									<div style="padding-top:10px;">
+						
+							        
+	
+					</div>
+							</div>
+		
+        
+	
+
+						
+					</div><!-- .mainboxここまで -->
+	
+						
+	<div class="sns">
+	<ul class="clearfix">
+		<!--ツイートボタン-->
+		<li class="twitter"> 
+		<a rel="nofollow" onclick="window.open(&#39;//twitter.com/intent/tweet?url=http%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F&amp;text=M5Stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9FAWS+IoT%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9&amp;tw_p=tweetbutton&#39;, &#39;&#39;, &#39;width=500,height=450&#39;); return false;"><i class="fa fa-twitter"></i><span class="snstext ">Twitter</span></a>
+		</li>
+
+		<!--シェアボタン-->      
+		<li class="facebook">
+		<a href="http://www.facebook.com/sharer.php?src=bm&amp;u=http%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F&amp;t=M5Stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9FAWS+IoT%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i><span class="snstext ">シェア</span>
+		</a>
+		</li>
+
+		<!--Google+1ボタン-->
+		<li class="googleplus">
+		<a href="https://plus.google.com/share?url=http%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F" target="_blank" rel="nofollow"><i class="fa fa-google-plus"></i><span class="snstext ">Google+</span></a>
+		</li>
+
+		<!--ポケットボタン-->      
+		<li class="pocket">
+		<a rel="nofollow" onclick="window.open(&#39;//getpocket.com/edit?url=http%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F&amp;title=M5Stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9FAWS+IoT%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9&#39;, &#39;&#39;, &#39;width=500,height=350&#39;); return false;"><i class="fa fa-get-pocket"></i><span class="snstext ">Pocket</span></a></li>
+
+		<!--はてブボタン-->  
+		<li class="hatebu">       
+			<a href="http://b.hatena.ne.jp/entry/http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple" title="M5Stackを利用したAWS IoTの簡単な使い方" rel="nofollow" data-hatena-bookmark-initialized="1"><span style="font-weight:bold" class="fa-hatena">B!</span><span class="snstext ">はてブ</span>
+			</a><script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/bookmark_button.js" charset="utf-8" async="async"></script>
+
+		</li>
+
+		<!--LINEボタン-->   
+		<li class="line">
+		<a href="http://line.me/R/msg/text/?M5Stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9FAWS+IoT%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9%0Ahttp%3A%2F%2Fkyokucho1989.chillout.jp%2F2019%2F08%2F19%2Fm5stack%25e3%2582%2592%25e5%2588%25a9%25e7%2594%25a8%25e3%2581%2597%25e3%2581%259faws-iot%25e3%2581%25ae%25e7%25b0%25a1%25e5%258d%2598%25e3%2581%25aa%25e4%25bd%25bf%25e3%2581%2584%25e6%2596%25b9%2F" target="_blank" rel="nofollow"><i class="fa fa-comment" aria-hidden="true"></i><span class="snstext">LINE</span></a>
+		</li>     
+	</ul>
+
+	</div> 
+
+							
+						<p class="tagst">
+							<i class="fa fa-folder-open-o" aria-hidden="true"></i>-<a href="http://kyokucho1989.chillout.jp/category/m5stack/" rel="category tag">M5Stack</a><br>
+													</p>
+
+					<aside>
+
+						<p class="author" style="display:none;"><a href="http://kyokucho1989.chillout.jp/author/kyokucho1989/" title="kyokucho1989" class="vcard author"><span class="fn">author</span></a></p>
+												<!--ループ終了-->
+													<hr class="hrcss">
+<div id="comments">
+     	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://kyokucho1989.chillout.jp/2019/08/19/m5stack%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Faws-iot%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9/#respond" style="display:none;">コメントをキャンセル</a></small></h3>			<form action="http://kyokucho1989.chillout.jp/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">メールアドレスが公開されることはありません。</span> <span class="required">*</span> が付いている欄は必須項目です</p><p class="comment-form-comment"><label for="comment">コメント</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">名前 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">メールアドレス <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">サイト</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">次回のコメントで使用するためブラウザーに自分の名前、メールアドレス、サイトを保存する。</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="コメントを送る"> <input type="hidden" name="comment_post_ID" value="52" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	</div>
+
+<!-- END singer -->
+												<!--関連記事-->
+						
+			<h4 class="point"><span class="point-in">関連記事</span></h4>
+<div class="kanren ">
+							<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/11/01/m5stack%e3%81%a7%e9%a0%91%e5%bc%b5%e3%82%8b%ef%bc%81line-things%e3%81%ae%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/P_20191101_044828-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-400x400.jpg 400w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<h5 class="kanren-t">
+						<a href="http://kyokucho1989.chillout.jp/2019/11/01/m5stack%e3%81%a7%e9%a0%91%e5%bc%b5%e3%82%8b%ef%bc%81line-things%e3%81%ae%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f/">
+							M5Stackで頑張る！LINE Thingsのはじめかた						</a></h5>
+
+											<div class="smanone">
+							<p>LINEThingsとは？ 　LINE ThingsとはLINEでIoTができてしまう楽しいものである！LINEはたくさんの人が使っているので、IoTがより楽しくできるぞ。 STEP1.　M5Stac … </p>
+						</div>
+					
+				</dd>
+			</dl>
+					<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/03/29/iot%e3%81%ae%e3%82%84%e3%82%8a%e3%81%8b%e3%81%9f-%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f-m5stack%e3%82%92%e4%bd%bf%e3%81%88%e3%81%b0%e3%81%a8%e3%81%a3%e3%81%a6%e3%82%82%e7%b0%a1%e5%8d%98/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/7-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-768x768.jpg 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-1024x1024.jpg 1024w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-400x400.jpg 400w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7.jpg 1080w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<h5 class="kanren-t">
+						<a href="http://kyokucho1989.chillout.jp/2019/03/29/iot%e3%81%ae%e3%82%84%e3%82%8a%e3%81%8b%e3%81%9f-%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f-m5stack%e3%82%92%e4%bd%bf%e3%81%88%e3%81%b0%e3%81%a8%e3%81%a3%e3%81%a6%e3%82%82%e7%b0%a1%e5%8d%98/">
+							IoTのやりかた/ はじめかた -M5Stackを使えばとっても簡単！-						</a></h5>
+
+											<div class="smanone">
+							<p>1.問題：「IoTやりたい!でもなにからやればいいの？」 　IoTという言葉をよく聞くようになった。これはInternet of Thingsの略称で、物理的なものにセンサーをつけて、そのデータから様 … </p>
+						</div>
+					
+				</dd>
+			</dl>
+					<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/10/02/m5stack%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/darryl-brian-bDn1Wi1ixLw-unsplash-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-400x400.jpg 400w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<h5 class="kanren-t">
+						<a href="http://kyokucho1989.chillout.jp/2019/10/02/m5stack%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9/">
+							M5Stackを使ったタイマーの作り方						</a></h5>
+
+											<div class="smanone">
+							<p>Photo by Darryl Brian on Unsplash 前段：タイマーはプログラム作成初心者にぴったりの題材 　「M5Stackを購入したはいいけど、何をしたらいいかわからない」 そんなあ … </p>
+						</div>
+					
+				</dd>
+			</dl>
+				</div>
+						<!--ページナビ-->
+						<div class="p-navi clearfix">
+							<dl>
+																	<dt>PREV</dt>
+									<dd>
+										<a href="http://kyokucho1989.chillout.jp/2019/08/05/%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%aa%e3%81%97%e3%81%a7iot%e3%81%8c%e3%81%a7%e3%81%8d%e3%82%8b%ef%bc%81iot-aws%e3%81%ae%e7%99%bb%e9%8c%b2%e6%96%b9%e6%b3%95%e3%81%ae%e7%b4%b9%e4%bb%8b/">サーバーなしでIoTができる！IoT AWSの登録方法の紹介</a>
+									</dd>
+																									<dt>NEXT</dt>
+									<dd>
+										<a href="http://kyokucho1989.chillout.jp/2019/10/02/m5stack%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9/">M5Stackを使ったタイマーの作り方</a>
+									</dd>
+															</dl>
+						</div>
+					</aside>
+
+				</div>
+				<!--/post-->
+			</article>
+		</main>
+	</div>
+	<!-- /#contentInner -->
+	<div id="side">
+	<aside style="position: static; margin: 0px; bottom: 749px; left: 950px;" class="">
+
+		
+					<div class="kanren ">
+							<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/11/01/m5stack%e3%81%a7%e9%a0%91%e5%bc%b5%e3%82%8b%ef%bc%81line-things%e3%81%ae%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/P_20191101_044828-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/11/P_20191101_044828-400x400.jpg 400w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<div class="blog_info ">
+						<p>2019/11/01</p>
+					</div>
+					<h5><a href="http://kyokucho1989.chillout.jp/2019/11/01/m5stack%e3%81%a7%e9%a0%91%e5%bc%b5%e3%82%8b%ef%bc%81line-things%e3%81%ae%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f/">M5Stackで頑張る！LINE Thingsのはじめかた</a></h5>
+
+											<div class="smanone">
+							<p>LINEThingsとは？ 　LINE ThingsとはLINEでIoTができてしまう楽しいものである！LINEはたくさんの人が使っているので、IoTがより楽しくできるぞ。 STEP1.　M5Stac … </p>
+						</div>
+					
+				</dd>
+			</dl>
+					<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/10/02/m5stack%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/darryl-brian-bDn1Wi1ixLw-unsplash-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/10/darryl-brian-bDn1Wi1ixLw-unsplash-400x400.jpg 400w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<div class="blog_info ">
+						<p>2019/10/02</p>
+					</div>
+					<h5><a href="http://kyokucho1989.chillout.jp/2019/10/02/m5stack%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9/">M5Stackを使ったタイマーの作り方</a></h5>
+
+											<div class="smanone">
+							<p>Photo by Darryl Brian on Unsplash 前段：タイマーはプログラム作成初心者にぴったりの題材 　「M5Stackを購入したはいいけど、何をしたらいいかわからない」 そんなあ … </p>
+						</div>
+					
+				</dd>
+			</dl>
+					<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/9-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/9-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/9-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/9.jpg 160w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<div class="blog_info ">
+						<p>2019/08/19</p>
+					</div>
+					<h5><a href="http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/">M5Stackを利用したAWS IoTの簡単な使い方</a></h5>
+
+											<div class="smanone">
+							<p>1.問題　AWS IoTの具体的な使い方がわからない 　「IoTの利用にはAWS IoTというサービスが有用なのは知っている。けれど、具体的にどうやってはじめればいいのだろう？」 そう思ったあなた。こ … </p>
+						</div>
+					
+				</dd>
+			</dl>
+					<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/08/05/%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%aa%e3%81%97%e3%81%a7iot%e3%81%8c%e3%81%a7%e3%81%8d%e3%82%8b%ef%bc%81iot-aws%e3%81%ae%e7%99%bb%e9%8c%b2%e6%96%b9%e6%b3%95%e3%81%ae%e7%b4%b9%e4%bb%8b/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/zan-ilic-wGqz5YSqsfk-unsplash-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/zan-ilic-wGqz5YSqsfk-unsplash-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/zan-ilic-wGqz5YSqsfk-unsplash-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/zan-ilic-wGqz5YSqsfk-unsplash-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/08/zan-ilic-wGqz5YSqsfk-unsplash-400x400.jpg 400w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<div class="blog_info ">
+						<p>2019/08/05</p>
+					</div>
+					<h5><a href="http://kyokucho1989.chillout.jp/2019/08/05/%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%aa%e3%81%97%e3%81%a7iot%e3%81%8c%e3%81%a7%e3%81%8d%e3%82%8b%ef%bc%81iot-aws%e3%81%ae%e7%99%bb%e9%8c%b2%e6%96%b9%e6%b3%95%e3%81%ae%e7%b4%b9%e4%bb%8b/">サーバーなしでIoTができる！IoT AWSの登録方法の紹介</a></h5>
+
+											<div class="smanone">
+							<p>1.問題：IoTをはじめてみたいけどサーバーの準備などが難しそう 　「IoTにはデータサーバーが必要らしい。準備するのが面倒だなあ」 　「設備の管理も難しそう」 　そんなことを考えているそこのあなた。 … </p>
+						</div>
+					
+				</dd>
+			</dl>
+					<dl class="clearfix">
+				<dt><a href="http://kyokucho1989.chillout.jp/2019/03/29/iot%e3%81%ae%e3%82%84%e3%82%8a%e3%81%8b%e3%81%9f-%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f-m5stack%e3%82%92%e4%bd%bf%e3%81%88%e3%81%b0%e3%81%a8%e3%81%a3%e3%81%a6%e3%82%82%e7%b0%a1%e5%8d%98/">
+													<img width="150" height="150" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/7-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-150x150.jpg 150w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-300x300.jpg 300w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-768x768.jpg 768w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-1024x1024.jpg 1024w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-100x100.jpg 100w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7-400x400.jpg 400w, http://kyokucho1989.chillout.jp/wp-content/uploads/2019/03/7.jpg 1080w" sizes="(max-width: 150px) 100vw, 150px">											</a></dt>
+				<dd>
+										<div class="blog_info ">
+						<p>2019/03/29</p>
+					</div>
+					<h5><a href="http://kyokucho1989.chillout.jp/2019/03/29/iot%e3%81%ae%e3%82%84%e3%82%8a%e3%81%8b%e3%81%9f-%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f-m5stack%e3%82%92%e4%bd%bf%e3%81%88%e3%81%b0%e3%81%a8%e3%81%a3%e3%81%a6%e3%82%82%e7%b0%a1%e5%8d%98/">IoTのやりかた/ はじめかた -M5Stackを使えばとっても簡単！-</a></h5>
+
+											<div class="smanone">
+							<p>1.問題：「IoTやりたい!でもなにからやればいいの？」 　IoTという言葉をよく聞くようになった。これはInternet of Thingsの略称で、物理的なものにセンサーをつけて、そのデータから様 … </p>
+						</div>
+					
+				</dd>
+			</dl>
+				</div>		
+					<div id="mybox">
+				<div class="ad">			<div class="textwidget"><p><img class="alignnone size-full wp-image-31" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/9.jpg" alt="" width="160" height="160"></p>
+<p>kyokucho1989です。IoTとかものづくりに興味があります。ワクワクすることをどんどん発信していきたいです。</p>
+<p>twitter:&nbsp;<a href="https://twitter.com/kyokucho_1989">@kyokucho_1989</a></p>
+</div>
+		</div><div class="ad"><div id="search">
+	<form method="get" id="searchform" action="http://kyokucho1989.chillout.jp/">
+		<label class="hidden" for="s">
+					</label>
+		<input type="text" placeholder="検索するテキストを入力" value="" name="s" id="s">
+		<input type="image" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/search.png" alt="検索" id="searchsubmit">
+	</form>
+</div>
+<!-- /stinger --> </div>		<div class="ad">		<h4 class="menu_underh2">最近の投稿</h4>		<ul>
+											<li>
+					<a href="http://kyokucho1989.chillout.jp/2019/11/01/m5stack%e3%81%a7%e9%a0%91%e5%bc%b5%e3%82%8b%ef%bc%81line-things%e3%81%ae%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f/">M5Stackで頑張る！LINE Thingsのはじめかた</a>
+									</li>
+											<li>
+					<a href="http://kyokucho1989.chillout.jp/2019/10/02/m5stack%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9/">M5Stackを使ったタイマーの作り方</a>
+									</li>
+											<li>
+					<a href="http://kyokucho1989.chillout.jp/2019/08/19/m5stack%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9faws-iot%e3%81%ae%e7%b0%a1%e5%8d%98%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9/">M5Stackを利用したAWS IoTの簡単な使い方</a>
+									</li>
+											<li>
+					<a href="http://kyokucho1989.chillout.jp/2019/08/05/%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%aa%e3%81%97%e3%81%a7iot%e3%81%8c%e3%81%a7%e3%81%8d%e3%82%8b%ef%bc%81iot-aws%e3%81%ae%e7%99%bb%e9%8c%b2%e6%96%b9%e6%b3%95%e3%81%ae%e7%b4%b9%e4%bb%8b/">サーバーなしでIoTができる！IoT AWSの登録方法の紹介</a>
+									</li>
+											<li>
+					<a href="http://kyokucho1989.chillout.jp/2019/03/29/iot%e3%81%ae%e3%82%84%e3%82%8a%e3%81%8b%e3%81%9f-%e3%81%af%e3%81%98%e3%82%81%e3%81%8b%e3%81%9f-m5stack%e3%82%92%e4%bd%bf%e3%81%88%e3%81%b0%e3%81%a8%e3%81%a3%e3%81%a6%e3%82%82%e7%b0%a1%e5%8d%98/">IoTのやりかた/ はじめかた -M5Stackを使えばとっても簡単！-</a>
+									</li>
+					</ul>
+		</div><div class="ad"><h4 class="menu_underh2">最近のコメント</h4><ul id="recentcomments"></ul></div><div class="ad"><h4 class="menu_underh2">アーカイブ</h4>		<ul>
+				<li><a href="http://kyokucho1989.chillout.jp/2019/11/">2019年11月</a></li>
+	<li><a href="http://kyokucho1989.chillout.jp/2019/10/">2019年10月</a></li>
+	<li><a href="http://kyokucho1989.chillout.jp/2019/08/">2019年8月</a></li>
+	<li><a href="http://kyokucho1989.chillout.jp/2019/03/">2019年3月</a></li>
+		</ul>
+			</div><div class="ad"><h4 class="menu_underh2">カテゴリー</h4>		<ul>
+				<li class="cat-item cat-item-2"><a href="http://kyokucho1989.chillout.jp/category/m5stack/">M5Stack</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://kyokucho1989.chillout.jp/category/%e6%9c%aa%e5%88%86%e9%a1%9e/">未分類</a>
+</li>
+		</ul>
+			</div><div class="ad"><h4 class="menu_underh2">メタ情報</h4>			<ul>
+						<li><a href="http://kyokucho1989.chillout.jp/wp-login.php">ログイン</a></li>
+			<li><a href="http://kyokucho1989.chillout.jp/feed/">投稿の <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://kyokucho1989.chillout.jp/comments/feed/">コメントの <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://ja.wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</div>			</div>
+		
+		<div id="scrollad">
+						<!--ここにgoogleアドセンスコードを貼ると規約違反になるので注意して下さい-->
+
+		</div>
+	</aside>
+</div>
+<!-- /#side -->
+</div>
+<!--/#content -->
+</div><!-- /contentw -->
+<footer>
+<div id="footer" style="top: 0px;">
+<div id="footer-in">
+
+	<!-- フッターのメインコンテンツ -->
+	<h3 class="footerlogo">
+	<!-- ロゴ又はブログ名 -->
+			<a href="http://kyokucho1989.chillout.jp/">
+	
+							マトリョーシカ的IoTブログ			
+			</a>
+		</h3>
+
+	<p>
+		<a href="http://kyokucho1989.chillout.jp/">IoTでいろいろたのしいことをやっていくブログ</a>
+	</p>
+		
+<p class="copyr" data-copyr="">Copyright© マトリョーシカ的IoTブログ ,  2019 All Rights Reserved Powered by <a href="http://manualstinger.com/cr" rel="nofollow">STINGER</a>.</p></div>
+</div>
+</footer>
+</div>
+<!-- /#wrapperin -->
+</div>
+<!-- /#wrapper -->
+</div><!-- /#st-ami -->
+<script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/base.js"></script>
+<script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/scroll.js"></script>
+<script type="text/javascript" src="./M5Stackを利用したAWS IoTの簡単な使い方 _ マトリョーシカ的IoTブログ_files/wp-embed.min.js"></script>
+	<script>
+		(function (window, document, $, undefined) {
+			'use strict';
+
+			$(function () {
+				var s = $('[data-copyr]'), t = $('#footer-in');
+				
+				s.length && t.length && t.append(s);
+			});
+		}(window, window.document, jQuery));
+	</script>
+<div style="visibility: hidden; position: absolute; top: 0px;">S</div></body></html>
