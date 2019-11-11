@@ -28,7 +28,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 |-----|-------|:-------:|:----:|------|
 | ボタン x 3 | M5Stack上部の3つのボタン | - | 各ボタンに対応したクリックイベントを取得できます | [公式サンプル](https://github.com/m5stack/M5Stack/tree/master/examples/Basics/Button) |
 | 液晶ディスプレイ | M5Stack上部のLCD | - | ディスプレイに文字やグラフィックを表示できます | [公式サンプル](https://github.com/m5stack/M5Stack/tree/master/examples/Basics/Display) |
-| RGBバー | M5Stack側面のRGB LED | - | TODO | TODO |
+| RGBバー | M5Stack側面のRGB LED | [Hello-LedBar](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-LedBar) | M5Stack側面のLED RGB Barを光らせることができます | - |
 
 ### Analog/Digital (PORT B)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
