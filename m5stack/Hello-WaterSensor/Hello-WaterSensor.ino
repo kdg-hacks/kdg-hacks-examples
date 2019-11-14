@@ -1,5 +1,5 @@
 /**
- ** Name: Hello-SHT31.ino
+ ** Name: Hello-WaterSensor.ino
  *
  * M5StackでGrove - Water Sensorを使うサンプル
  * PORT Bにつないで用いる

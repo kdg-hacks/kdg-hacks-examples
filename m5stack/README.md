@@ -37,7 +37,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT Dual-BUTTON | ボタン x 2 | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/dual_button) |
 | UNIT PIR | モーションセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/pir) |
 | UNIT IR | 赤外線送受信センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) || UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
-
+| Grove - Water Sensor | 水検知センサー | [Hello-WaterSensor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-WaterSensor) | センサーが水に浸かっているかどうかを検知できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) |
 
 ### I2C (PORT A)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
@@ -52,7 +52,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | GROVE-温湿度| <details><summary>高精度で使いやすい温度湿度センサ</summary><sub>SHT31センサは、相対湿度の誤差±2%以内の最高精度の湿度センサです。<br>温度計としても-40度や125度といった極端な状況でも使用可能で、±0.3度の高精度を保持します。</sub></details>| [Hello-SHT31](Hello-SHT31) | 1秒間隔で温度と湿度を取得し、シリアルに出力します | [公式Wiki](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|
 | GROVE-温湿度 | デジタル温度・湿度センサ(DHT11) |  [Hello-DHT11](Hello-DHT11)|1秒間隔で温度と湿度を取得し、シリアルに出力します| [公式Wiki](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/)
 | GROVE-Buzzer| <details><summary> ブザー </summary><sub>音を鳴らすことができます。センサーの値等を判定して音を鳴らして通知する等に活用できます。 </sub></details> | [Hello-Buzzer](Hello-Buzzer) |100ms間をブザーをONにして、1000ms間ブザーをOFFすることを繰り返す|[公式Wiki](http://wiki.seeedstudio.com/Grove-Buzzer/)|
-
+v
 
 ### UART (PORT C)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
