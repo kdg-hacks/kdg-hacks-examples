@@ -38,6 +38,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT PIR | モーションセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/pir) |
 | UNIT IR | 赤外線送受信センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) || UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
 | Grove - Water Sensor | 水検知センサー | [Hello-WaterSensor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-WaterSensor) | センサーが水に浸かっているかどうかを検知できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) |
+| GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | ３０秒間測定した、大気中の粒子状物質の濃度を出力する。安定した値を取得するには３分間以上動作させること | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
 
 ### I2C (PORT A)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
