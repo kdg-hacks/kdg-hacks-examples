@@ -1,7 +1,7 @@
 /**
  ** Name: Hello-SHT31.ino
  *
- * M5Stackで温湿度センサ(SHT31)を使うサンプル
+ * M5StackでGrove - Water Sensorを使うサンプル
  * PORT Bにつないで用いる
  *
  * 参考: http://wiki.seeedstudio.com/Grove-Water_Sensor/
@@ -13,7 +13,6 @@ void setup()
 {
     // Initialize the M5Stack object
     M5.begin();
-    Serial.begin(9600);
     pinMode(WATER_SENSOR, INPUT);
 }
 void loop()
