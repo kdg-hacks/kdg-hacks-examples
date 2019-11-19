@@ -43,7 +43,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 ### I2C (PORT A) [笹子さん]
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
-| UNIT JOYSTICK | ジョイスティック |  [Hello-Joystick](Hello-Joystick)  | [Joystickの座標(x,y,z)が確認できます | [公式Docs](https://docs.m5stack.com/#/en/unit/joystick) |
+| UNIT JOYSTICK | ジョイスティック |  [Hello-Joystick](Hello-Joystick)  | Joystickの座標(x,y,z)が確認できます | [公式Docs](https://docs.m5stack.com/#/en/unit/joystick) |
 | UNIT THERMAL | サーモセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/thermal) |
 | UNIT ENV | 温湿度センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/env) |
 | UNIT TOF | 距離センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/tof) |
