@@ -57,7 +57,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 ### UART (PORT C) [渡辺さん]
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
-| UNIT FINGER | 指紋センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
+| UNIT FINGER | 指紋センサー | - | 指紋を読み取って照合できる。2,3秒程度指紋センサに触れておく必要あり。 | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
 | UNIT GPS | GPSセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/gps) |
 
 ### Module [江口さん]
