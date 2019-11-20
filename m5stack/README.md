@@ -47,7 +47,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT THERMAL | サーモセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/thermal) |
 | UNIT ENV | 温湿度センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/env) |
 | UNIT TOF | 距離センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/tof) |
-| UNIT HEART | 心拍センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/heart) |
+| UNIT HEART | 心拍センサー | - | HEART は MAX30100(pulse oximeter chip)を内蔵しています。赤血球中の酸素量と非運搬酸素量を赤外LED照明によって検出することができ、心拍数のAD値も取得可能です。 MAX30100は2個の発光ダイオードと1個の光検出器を内蔵しています。ユニットをM5CoreのGROVE Aポートに接続し、指を置くことでデータを取得できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/heart) |
 | UNIT COLOR | 色センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/color) |
 | UNIT MUSIC | Makey Makey | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/makey) |
 | GROVE-温湿度| <details><summary>高精度で使いやすい温度湿度センサ</summary><sub>SHT31センサは、相対湿度の誤差±2%以内の最高精度の湿度センサです。<br>温度計としても-40度や125度といった極端な状況でも使用可能で、±0.3度の高精度を保持します。</sub></details>| [Hello-SHT31](Hello-SHT31) | 1秒間隔で温度と湿度を取得し、シリアルに出力します | [公式Wiki](http://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/)|
