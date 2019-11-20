@@ -44,7 +44,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | UNIT JOYSTICK | ジョイスティック |  [Hello-Joystick](Hello-Joystick)  | Joystickの座標(x,y,z)が確認できます | [公式Docs](https://docs.m5stack.com/#/en/unit/joystick) |
-| UNIT THERMAL | サーモセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/thermal) |
+| UNIT THERMAL | サーモセンサー | - | THERMALユニットはサーモパイルセンサーMLX90640を備えたサーモグラフィックカメラユニットです。出力解像度は32x24ピクセルです。遠くの物体の表面温度を±1.5°Cの精度で計測する事が可能です。 | [公式Docs](https://docs.m5stack.com/#/en/unit/thermal) |
 | UNIT ENV | 温湿度センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/env) |
 | UNIT TOF | 距離センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/tof) |
 | UNIT HEART | 心拍センサー | [Hello-Heart](Hello-Heart)| HEART は MAX30100(pulse oximeter chip)を内蔵しています。赤血球中の酸素量と非運搬酸素量を赤外LED照明によって検出することができ、心拍数のAD値も取得可能です。 MAX30100は2個の発光ダイオードと1個の光検出器を内蔵しています。ユニットをM5CoreのGROVE Aポートに接続し、指を置くことでデータを取得できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/heart) |
