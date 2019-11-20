@@ -33,8 +33,8 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 ### Analog/Digital (PORT B) [山田]
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
-| UNIT BUTTON | ボタン | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/button) |
-| UNIT Dual-BUTTON | ボタン x 2 | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/dual_button) |
+| UNIT BUTTON | ボタン | - | ボタンを一つ持つセンサーです。ボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/button) |
+| UNIT Dual-BUTTON | ボタン x 2 | - | ボタンを二つ持つセンサーです。それぞれのボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/dual_button) |
 | UNIT PIR | モーションセンサー | - | 特定の範囲内で物体の動きを検知します。検知結果が0, 1で取得できます。ただし、2秒程度の遅延時間が発生しますので、ご注意ください。 | [公式Docs](https://docs.m5stack.com/#/en/unit/pir) |
 | UNIT IR | 赤外線送受信センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) || UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
 | UNIT EARTH | 土壌水分センサー | - | 土壌中に含まれる水分を測定するためのM5Stack用土壌水分センサユニットです。アナログ、あるいはデジタル値で、水分量を測定することができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/earth) || UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
