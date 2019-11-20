@@ -58,7 +58,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | UNIT FINGER | 指紋センサー | - | 指紋を読み取って照合できる。2,3秒程度指紋センサに触れておく必要あり。 | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
-| UNIT GPS | GPSセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/gps) |
+| UNIT GPS | GPSセンサー | - | GPSの値を取得できる。M5stack Fireを用いている場合はarudino ideで tools -> PSRAMをDisabled　に設定する必要あるので注意。[参考](http://forum.m5stack.com/topic/1171/m5stack-core-does-not-recognize-the-gps-module/3) | [公式Docs](https://docs.m5stack.com/#/en/unit/gps) |
 
 ### Module [江口さん]
 |製品名|製品説明|ディレクトリ|概要|参考URL|
