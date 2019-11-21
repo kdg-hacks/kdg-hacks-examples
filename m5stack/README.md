@@ -36,8 +36,10 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT BUTTON | ボタン | - | ボタンを一つ持つセンサーです。ボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/button) |
 | UNIT Dual-BUTTON | ボタン x 2 | - | ボタンを二つ持つセンサーです。それぞれのボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/dual_button) |
 | UNIT PIR | モーションセンサー | - | 特定の範囲内で物体の動きを検知します。検知結果が0, 1で取得できます。ただし、2秒程度の遅延時間が発生しますので、ご注意ください。 | [公式Docs](https://docs.m5stack.com/#/en/unit/pir) |
-| UNIT IR | 赤外線送受信センサー | - | 赤外線リモコンとして、家電製品やその他のデバイスを操作する用途にお使いいただけます。赤外線発信器と受信器の両方を搭載しているので、リモコン信号のエンコードだけでなくデコードも行うことができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) || UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
-| UNIT EARTH | 土壌水分センサー | - | 土壌中に含まれる水分を測定するためのM5Stack用土壌水分センサユニットです。アナログ、あるいはデジタル値で、水分量を測定することができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/earth) || UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
+| UNIT IR | 赤外線送受信センサー | - | 赤外線リモコンとして、家電製品やその他のデバイスを操作する用途にお使いいただけます。赤外線発信器と受信器の両方を搭載しているので、リモコン信号のエンコードだけでなくデコードも行うことができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) |
+| UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
+| UNIT EARTH | 土壌水分センサー | - | 土壌中に含まれる水分を測定するためのM5Stack用土壌水分センサユニットです。アナログ、あるいはデジタル値で、水分量を測定することができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/earth) |
+| UNIT LIGHT | 光センサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
 | Grove - Water Sensor | 水検知センサー | [Hello-WaterSensor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-WaterSensor) | センサーが水に浸かっているかどうかを検知できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) |
 | GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | ３０秒間測定した、大気中の粒子状物質の濃度を出力する。安定した値を取得するには３分間以上動作させること | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
 
