@@ -65,8 +65,8 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 ### Module [江口さん]
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
-| MODULE PLUS | 指紋センサー | - | [Hello-GPS-Module](Hello-GPS-Module) | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
-| MODULE GPS | GPSセンサー | - | TODO | [公式Docs](https://docs.m5stack.com/#/en/module/gps) |
+| FINGER UNIT | 指紋センサー | - | [Hello-FINGER-Unit](Hello-FINGER-Unit) | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
+| MODULE GPS | GPSセンサー | - | [Hello-GPS-Module](Hello-GPS-Module) | [公式Docs](https://docs.m5stack.com/#/en/module/gps) |
 
 ### 外部連携 (SORACOM, AWSなど外部と連携するサンプル)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
