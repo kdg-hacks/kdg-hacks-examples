@@ -30,7 +30,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | 液晶ディスプレイ | M5Stack上部のLCD | - | ディスプレイに文字やグラフィックを表示できます | [公式サンプル](https://github.com/m5stack/M5Stack/tree/master/examples/Basics/Display) |
 | RGBバー | M5Stack側面のRGB LED | [Hello-LedBar](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-LedBar) | M5Stack側面のLED RGB Barを光らせることができます | - |
 
-### Analog/Digital (PORT B) [山田]
+### Analog/Digital (PORT B)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | UNIT BUTTON | ボタン | - | ボタンを一つ持つセンサーです。ボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/button) |
@@ -42,7 +42,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | Grove - Water Sensor | 水検知センサー | [Hello-WaterSensor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-WaterSensor) | センサーが水に浸かっているかどうかを検知できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) |
 | GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | ３０秒間測定した、大気中の粒子状物質の濃度を出力する。安定した値を取得するには３分間以上動作させること | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
 
-### I2C (PORT A) [笹子さん]
+### I2C (PORT A) 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | UNIT JOYSTICK | ジョイスティック |  [Hello-Joystick](Hello-Joystick)  | Joystickの座標(x,y,z)が確認できます | [公式Docs](https://docs.m5stack.com/#/en/unit/joystick) |
@@ -56,13 +56,13 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | GROVE-温湿度 | デジタル温度・湿度センサ(DHT11) |  [Hello-DHT11](Hello-DHT11)|1秒間隔で温度と湿度を取得し、シリアルに出力します| [公式Wiki](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/)
 | GROVE-Buzzer| <details><summary> ブザー </summary><sub>音を鳴らすことができます。センサーの値等を判定して音を鳴らして通知する等に活用できます。 </sub></details> | [Hello-Buzzer](Hello-Buzzer) |100ms間をブザーをONにして、1000ms間ブザーをOFFすることを繰り返す|[公式Wiki](http://wiki.seeedstudio.com/Grove-Buzzer/)|
 
-### UART (PORT C) [渡辺さん]
+### UART (PORT C)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | UNIT FINGER | 指紋センサー | - | 指紋を読み取って照合できる。2,3秒程度指紋センサに触れておく必要あり。 | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
 | UNIT GPS | GPSセンサー | - | GPSの値を取得できる。M5stack Fireを用いている場合はarudino ideで tools -> PSRAMをDisabled　に設定する必要あるので注意。[参考](http://forum.m5stack.com/topic/1171/m5stack-core-does-not-recognize-the-gps-module/3) | [公式Docs](https://docs.m5stack.com/#/en/unit/gps) |
 
-### Module [江口さん]
+### Module
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | FINGER UNIT | 指紋センサー | [Hello-FINGER-Unit](Hello-FINGER-Unit) | 指紋を読み取って照合できる。2,3秒程度指紋センサに触れておく必要あり。 | [公式Docs](https://docs.m5stack.com/#/en/unit/finger) |
