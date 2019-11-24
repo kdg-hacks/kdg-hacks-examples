@@ -41,6 +41,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT LIGHT | 光センサー | - | 環境光の強度を検出するM5Stack用光センサユニットです。アナログ信号による測定値、あるいは光の有無をを示すデジタル値(0/1)でも得ることができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
 | Grove - Water Sensor | 水検知センサー | [Hello-WaterSensor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-WaterSensor) | センサーが水に浸かっているかどうかを検知できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) |
 | GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | ３０秒間測定した、大気中の粒子状物質の濃度を出力する。安定した値を取得するには３分間以上動作させること | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
+| Grove - サーボモータ | サーボモーター  | [Hello-Servo](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-Servo) | サーボモータを制御できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) | [公式Docs](https://www.switch-science.com/catalog/1858/)
 
 ### I2C (PORT A) 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
