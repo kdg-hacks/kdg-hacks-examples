@@ -36,7 +36,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | UNIT BUTTON | ボタン | - | ボタンを一つ持つセンサーです。ボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/button) |
 | UNIT Dual-BUTTON | ボタン x 2 | - | ボタンを二つ持つセンサーです。それぞれのボタンを押しているかどうかを検出できます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/dual_button) |
 | UNIT PIR | モーションセンサー | - | 特定の範囲内で物体の動きを検知します。検知結果が0, 1で取得できます。ただし、2秒程度の遅延時間が発生しますので、ご注意ください。 | [公式Docs](https://docs.m5stack.com/#/en/unit/pir) |
-| UNIT IR | 赤外線送受信センサー | - | 赤外線リモコンとして、家電製品やその他のデバイスを操作する用途にお使いいただけます。赤外線発信器と受信器の両方を搭載しているので、リモコン信号のエンコードだけでなくデコードも行うことができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) |
+| UNIT IR | 赤外線送受信センサー | [Hello-IR](Hello-IR) | 赤外線リモコンとして、家電製品やその他のデバイスを操作する用途にお使いいただけます。赤外線発信器と受信器の両方を搭載しているので、リモコン信号のエンコードだけでなくデコードも行うことができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/ir) |
 | UNIT EARTH | 土壌水分センサー | - | 土壌中に含まれる水分を測定するためのM5Stack用土壌水分センサユニットです。アナログ、あるいはデジタル値で、水分量を測定することができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/earth) |
 | UNIT LIGHT | 光センサー | - | 環境光の強度を検出するM5Stack用光センサユニットです。アナログ信号による測定値、あるいは光の有無をを示すデジタル値(0/1)でも得ることができます。 | [公式Docs](https://docs.m5stack.com/#/en/unit/light) |
 | Grove - Water Sensor | 水検知センサー | [Hello-WaterSensor](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-WaterSensor) | センサーが水に浸かっているかどうかを検知できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) |
