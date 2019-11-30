@@ -75,7 +75,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | HTTP GET リクエスト | HTTP GETプロトコルで、Webサーバからデータを取得する | [Hello-HttpGet](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-HttpGet) | - | - |
 | HTTP POST リクエスト | HTTP POSTプロトコルで、Webサーバからデータを送る | [Hello-HttpPost](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-HttpPost) | - | - |
 | AWS IoT | AWS IoTに接続し、mqttでpub/subする | [Hello-AwsIoT](Hello-AwsIoT) | 5秒おきにpublishするサンプル。[詳細](Hello-AwsIoT/README.md) | - |
-| SORACOM Harvest | TODO | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Soracom-Harvest) | TODO | - |
+| SORACOM Harvest| <details><summary>  SORACOM Harvest(以下、Harvest) は、IoTデバイスからのデータを収集、蓄積するサービスです。 </summary><sub> 保存されたデータには受信時刻や SIM の ID が自動的に付与され、「SORACOM」のユーザーコンソール内で、グラフ化して閲覧したり、API を通じて取得することができます。</sub></details> | [Hello-SORACOM-harvest](Hello-SORACOM-harvest) |１秒ごとに、カウントアップした数値をHarvestに送る|[公式サイト](https://dev.soracom.io/jp/start/harvest/)|
 | SORACOM Funnel | TODO | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Soracom-Funnel) | TODO | - |
 | SORACOM Beam | TODO | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Soracom-Beam) | TODO | - |
 | 赤外線リモコン操作 | 赤外線リモコン操作 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
