@@ -43,7 +43,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | GROVE-ダスト| <details><summary>大気中の粒子状物質の濃度を測る</summary><sub>一定時間内のLowパルスの占有時間（Lo Pulse Occupancy time:LPOタイム）により、大気中の粒子状物質の濃度を測ることができます。LPOタイムは粒子状物質の濃度に比例します。このセンサは直径1マイクロメートル以上の粒子に反応します。クリーンルーム内のホコリを検知することも可能です。</sub></details>| [Hello-DustSensor](Hello-DustSensor) | ３０秒間測定した、大気中の粒子状物質の濃度を出力する。安定した値を取得するには３分間以上動作させること | [公式Wiki](http://wiki.seeed.cc/Grove-Dust_Sensor/) <br>[使用例](http://www.howmuchsnow.com/arduino/airquality/grovedust/)|
 | Grove - サーボモータ | サーボモーター  | [Hello-Servo](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-Servo) | サーボモータを制御できます | [公式Docs](http://wiki.seeedstudio.com/Grove-Water_Sensor) | [公式Docs](https://www.switch-science.com/catalog/1858/)
 
-### I2C (PORT A) 
+### I2C (PORT A)
 |製品名|製品説明|ディレクトリ|概要|参考URL|
 |-----|-------|:-------:|:----:|------|
 | UNIT JOYSTICK | ジョイスティック |  [Hello-Joystick](Hello-Joystick)  | Joystickの座標(x,y,z)が確認できます | [公式Docs](https://docs.m5stack.com/#/en/unit/joystick) |
@@ -77,7 +77,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | AWS IoT | AWS IoTに接続し、mqttでpub/subする | [Hello-AwsIoT](Hello-AwsIoT) | 5秒おきにpublishするサンプル。[詳細](Hello-AwsIoT/README.md) | - |
 | SORACOM Harvest| <details><summary>  SORACOM Harvest(以下、Harvest) は、IoTデバイスからのデータを収集、蓄積するサービスです。 </summary><sub> 保存されたデータには受信時刻や SIM の ID が自動的に付与され、「SORACOM」のユーザーコンソール内で、グラフ化して閲覧したり、API を通じて取得することができます。</sub></details> | [Hello-SORACOM-harvest](Hello-SORACOM-harvest) |１秒ごとに、カウントアップした数値をHarvestに送る|[公式サイト](https://dev.soracom.io/jp/start/harvest/)|
 | SORACOM Beam(IFTTT)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-SORACOM-beam](Hello-SORACOM-beam) |１０秒毎に、SORACOM Beamを使って、HTTP PostでIFTTTにデータを送る|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
-| SORACOM Funnel | TODO | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-Soracom-Funnel) | TODO | - |
+| SORACOM Funk | クラウドサービスの Function を直接実行できるサービスです。クラウドリソースを活用することでデバイス側の実装をシンプルに保ち、処理のオフロードや低電力消費化が可能となります。 | [Hello-SORACOM-Funk](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-SORACOM-Funk) | 10秒ごとに、SORACOM Funkを使って、AWS Lambdaを実行します | [公式サイト](https://dev.soracom.io/jp/funk/what-is-funk/) |
 | 赤外線リモコン操作 | 赤外線リモコン操作 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 | 赤外線リモコンセンサー値取得 | 赤外線リモコンセンサー値取得 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 
