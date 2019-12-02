@@ -77,7 +77,7 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 | AWS IoT | AWS IoTに接続し、mqttでpub/subする | [Hello-AwsIoT](Hello-AwsIoT) | 5秒おきにpublishするサンプル。[詳細](Hello-AwsIoT/README.md) | - |
 | SORACOM Harvest| <details><summary>  SORACOM Harvest(以下、Harvest) は、IoTデバイスからのデータを収集、蓄積するサービスです。 </summary><sub> 保存されたデータには受信時刻や SIM の ID が自動的に付与され、「SORACOM」のユーザーコンソール内で、グラフ化して閲覧したり、API を通じて取得することができます。</sub></details> | [Hello-SORACOM-harvest](Hello-SORACOM-harvest) |１秒ごとに、カウントアップした数値をHarvestに送る|[公式サイト](https://dev.soracom.io/jp/start/harvest/)|
 | SORACOM Beam(IFTTT)| <details><summary>  デバイスが利用する暗号化等の高負荷処理や接続先の設定を管理 </summary><sub> デバイスが利用する外部サービスへの接続先管理、プロトコル変換、暗号化処理等を実施できます。例えばHTTPをHTTPSプロトコルに変換し外部サービスと連携するなどが可能です。 </sub></details> | [Hello-SORACOM-beam](Hello-SORACOM-beam) |１０秒毎に、SORACOM Beamを使って、HTTP PostでIFTTTにデータを送る|[公式サイト](https://dev.soracom.io/jp/start/beam/)|
-| SORACOM Funk | クラウドサービスの Function を直接実行できるサービスです。クラウドリソースを活用することでデバイス側の実装をシンプルに保ち、処理のオフロードや低電力消費化が可能となります。 | [Hello-SORACOM-Funk](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/Hello-SORACOM-Funk) | 10秒ごとに、SORACOM Funkを使って、AWS Lambdaを実行します | [公式サイト](https://dev.soracom.io/jp/funk/what-is-funk/) |
+| SORACOM Funk | クラウドサービスの Function を直接実行できるサービスです。クラウドリソースを活用することでデバイス側の実装をシンプルに保ち、処理のオフロードや低電力消費化が可能となります。 | [Hello-SORACOM-Funk](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/m5stack/Hello-SORACOM-Funk) | 10秒ごとに、SORACOM Funkを使って、AWS Lambdaを実行します | [公式サイト](https://dev.soracom.io/jp/funk/what-is-funk/) |
 | 赤外線リモコン操作 | 赤外線リモコン操作 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 | 赤外線リモコンセンサー値取得 | 赤外線リモコンセンサー値取得 | [TODO](https://github.com/kdg-hacks/kdg-hacks-examples/tree/master/todo) | TODO | - |
 
