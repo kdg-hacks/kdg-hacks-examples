@@ -19,12 +19,9 @@ M5Stackはいくつかのセンサー、Wi-Fi、Bluetooth、スクリーン、�
 
 AWS IoT 1-Click のマネジメントコンソール上で設定することにより Eメールや SMSの送信などの簡単なアクションを実行できるほか、AWS Lambda と連携することでクリック時に JavaScript、Java、Python、C# などの言語で記述した独自のビジネスロジックの実行が可能です。
 
-4. [`Jetson Nano`](jetson-nano/)
-準備中
-
-5. [`+ メッセージ`](https://github.com/kdg-hacks/kdg-hacks-2019-winter-RCS)
+4. [`+ メッセージ`](https://github.com/kdg-hacks/kdg-hacks-2019-winter-RCS)
 
 リンク先をご覧ください。
 
-6. [`M5CAMERA`](m5camera/)
+5. [`M5CAMERA`](m5camera/)
 M5CAMERAは、PSRAMとイメージセンサOV2640を搭載した、ESP32ベースの小型カメラユニットです。Arduino IDEを使ってプログラムすることもできます。GROVE互換インターフェイスとレゴ互換の取り付け穴二つを搭載。三軸加速度・ジャイロセンサ（MPU6050）のモジュールや、温湿度・気圧センサ（BME280）モジュール、アナログマイクモジュールなどを接続して使用できます。
