@@ -1,6 +1,10 @@
 # kdg-hacks-examples
 KDG HACKS 向けのサンプルコード集
 
+## 開発環境準備
+* デバイスの[セットアップ](https://github.com/SeeedJP/Wiki/blob/master/Wio_cell_lib_for_Arduino/setup-ja.md)
+
+
 ## `Wio LTE M1/NB1(BG96)` との対応づけ
 
 作成したサンプルコードは、HWに内蔵されたLEDを利用したり、各種センサーを利用しています。
