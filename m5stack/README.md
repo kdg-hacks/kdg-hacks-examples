@@ -22,6 +22,8 @@ KDGHACKS向けに用意したセンサー、API等のサンプルコードです
 
 <img src="./images/m5_fire_06.png" width="640">
 
+<img src="./images/m5sensors.png" width="640">
+
 ### M5Stack組み込みセンサー
 
 |製品名|製品説明|ディレクトリ|概要|参考URL|
