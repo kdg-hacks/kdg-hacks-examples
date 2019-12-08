@@ -35,7 +35,8 @@
 #include "camera_pins.h"
 
 // 接続する無線LANの情報
-const char* ssid = "KDG-GUEST";
+// const char* ssid = "KDG-GUEST";
+const char* ssid = "IoT24";
 const char* password = "opentheGATE0905";
 
 // グローバル変数の定義
@@ -44,8 +45,8 @@ char mac_addr_s[20]="0000000000000000";
 
 WiFiClient client1;
 
-#define WEB_HOST "hoge.jp"
-#define WEB_PORT 80
+#define WEB_HOST "192.168.0.106"
+#define WEB_PORT 8000
 #define WEB_PATH "up.php"
 
 void setup() {
